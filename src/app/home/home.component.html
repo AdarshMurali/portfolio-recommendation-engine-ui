@@ -19,101 +19,48 @@
       <div id="left-panel" class="col-md-5">
         <form id="input-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
 
-          <div class="container">]
-            <div class=" text-center mt-5 ">
-    
-                <h1 >Bootstrap Contact Form</h1>
-                    
-                
+          <div class="form-group">
+            <label>Investment Amount</label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
             </div>
-    
-        
-        <div class="row ">
-          <div class="col-lg-7 mx-auto">
-            <div class="card mt-2 mx-auto p-4 bg-light">
-                <div class="card-body bg-light">
-           
-                <div class = "container">
-                                 <form id="contact-form" role="form">
-    
-                
-    
-                <div class="controls">
-    
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_name">Firstname *</label>
-                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_lastname">Lastname *</label>
-                                <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
-                                                                </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_email">Email *</label>
-                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
-                                
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="form_need">Please specify your need *</label>
-                                <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
-                                    <option value="" selected disabled>--Select Your Issue--</option>
-                                    <option >Request Invoice for order</option>
-                                    <option >Request order status</option>
-                                    <option >Haven't received cashback yet</option>
-                                    <option >Other</option>
-                                </select>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="form_message">Message *</label>
-                                <textarea id="form_message" name="message" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea
-                                    >
-                                </div>
-    
-                            </div>
-    
-    
-                        <div class="col-md-12">
-                            
-                            <input type="submit" class="btn btn-success btn-send  pt-2 btn-block
-                                " value="Send Message" >
-                        
-                    </div>
-              
-                    </div>
-    
-    
-            </div>
-             </form>
-            </div>
-                </div>
-    
-    
         </div>
-            <!-- /.8 -->
-    
+        <div class="form-group">
+            <label>Risk Type</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
         </div>
-        <!-- /.row-->
-    
+        <div class="form-group">
+          <label>Age</label>
+          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Investment Duration</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
     </div>
-    </div>
+        <div class="form-group">
+            <label for="preference">Preference</label>
+            <select id="preference" formControlName="preference" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.preference.errors }">
+              <option selected>Choose...</option>
+              <option>IT</option>
+              <option>Medicine</option>
+            </select>
+            <div *ngIf="submitted && f.preference.errors" class="invalid-feedback">
+              <div *ngIf="f.preference.errors.required">Preference is required</div>
+          </div>
+        </div>
 
-          <div class="user-input-field input-group mb-3">
+
+          <!-- <div class="user-input-field input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text">$</span>
             </div>
@@ -131,10 +78,10 @@
             <div class="input-group-append">
               <span class="input-group-text">.00</span>
             </div>
-          </div>
+          </div> -->
 
       
-          <fieldset class=" form-group">
+          <!-- <fieldset class=" form-group">
           <div class="row user-input-field">
             <legend class="col-form-label col-md-4 pt-0">Risk Type</legend>
             <div class="col-md-8">
@@ -160,9 +107,9 @@
           </div>
         </fieldset>
 
-      
+       -->
 
-        <div class="user-input-field form-group row">
+        <!-- <div class="user-input-field form-group row">
           <label class="col-md-4 my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
           <select class="col-md-8 form-control custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
             <option selected>Choose...</option>
@@ -179,7 +126,7 @@
             <label class="form-check-label" for="defaultCheck1">
               Short tem Investment
             </label>
-          </div>
+          </div> -->
         
           <!-- <button class="button" type="submit">Purchase</button> -->
           <button type="submit" class="primary-blue-button">Calculate</button>
