@@ -10,9 +10,18 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
-#home{
+#home-wrapper{
     #middle{
+        border: 1px solid;
+        height: 700px;
+        border-radius: 5px;
         margin: 100px 200px;
+        #left-panel{
+            border: 1px solid;
+        }
+        #right-panel{
+            border: 1px solid;
+        }
     }
   
 }
