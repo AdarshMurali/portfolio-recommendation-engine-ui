@@ -15,13 +15,35 @@
     #top{
         height: 300px;
         background-color: #fbc6a6;
+        padding : 50px 0;
+        #header {
+            width: 65%;
+            margin: 0 auto;
+            margin-top: 20px;
+            .savings-calc-logo{
+                margin-right: 15px;
+            }
+            .calc-title {
+                font-family: "Cooper-IT-BT",Arial,Helvetica,sans-serif;
+                font-size: 40px;
+                font-weight: 300;
+                color: #000;
+            }
+            .text-truncated{
+                font-family: "IBM-Plex-Sans",Arial,Helvetica,sans-serif;
+                font-size: 16px;
+                font-weight: 400;
+                color: #000;
+                line-height: 150%;
+            }
+        }
     }
     #middle{
         height: 700px;
         border-radius: 15px;
         width: 65%;
         margin: 0 auto;
-        margin-top: -5%;
+        margin-top: -3%;
         background-color: white;
         border: 2px solid rgba(0, 0, 0, 0.08);
             #left-panel{
