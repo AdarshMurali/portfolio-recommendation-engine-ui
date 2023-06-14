@@ -16,13 +16,15 @@ import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RecommendationComponent } from './recommendation/recommendation.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    RecommendationComponent
+    RecommendationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

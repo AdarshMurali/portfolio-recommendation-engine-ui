@@ -1,15 +1,4 @@
-.bg { 
-    /* The image used */
-    background-image: url("/assets/images/home-background.jpg");
-  
-    /* Full height */
-    height: 30%; 
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+
 #home-wrapper{
     background-color: #fef1e8;
     #top{
@@ -39,7 +28,7 @@
         }
     }
     #middle{
-        height: 700px;
+        height: 600px;
         border-radius: 15px;
         width: 65%;
         margin: 0 auto;
@@ -82,11 +71,24 @@
             }
 
     }
+    .bg { 
+        /* The image used */
+        background-image: url("/assets/images/home-background.jpg");
+      
+        /* Full height */
+        height: 500px; 
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    #bottom{
+        height: 300px;
+    }
   
 }
 
-// body, html {
-//     height: 100%;
-//   }
+
   
   
