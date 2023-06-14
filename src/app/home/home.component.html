@@ -16,24 +16,38 @@
         </div>
   </div>
   <div id="middle" class="row"> 
-      <div id="left-panel" class="col-md-4">
-        <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+      <div id="left-panel" class="col-md-5">
+        <form id="input-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
 
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-md-4 col-form-label">Investment Amount</label>
-            <div class="col-md-8">
-              <input type="range" class="form-control-range" id="formControlRange">
+          <div class="user-input-field input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Investment amount">
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
             </div>
           </div>
 
-          <fieldset class="form-group">
-          <div class="row">
+          <div class="user-input-field input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" placeholder="Saving amount">
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+
+      
+          <fieldset class=" form-group">
+          <div class="row user-input-field">
             <legend class="col-form-label col-md-4 pt-0">Risk Type</legend>
             <div class="col-md-8">
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                 <label class="form-check-label" for="gridRadios1">
-                  FLow
+                  Low
                 </label>
               </div>
               <div class="form-check">
@@ -52,24 +66,9 @@
           </div>
         </fieldset>
 
-        
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-md-4 col-form-label">Saving Amount</label>
-          <div class="col-md-8">
-            <!-- <input type="range" class="form-control-range" id="formControlRange"> -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">$</span>
-              </div>
-              <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-              <div class="input-group-append">
-                <span class="input-group-text">.00</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      
 
-        <div class="form-group row">
+        <div class="user-input-field form-group row">
           <label class="col-md-4 my-1 mr-2" for="inlineFormCustomSelectPref">Preference</label>
           <select class="col-md-8 form-control custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
             <option selected>Choose...</option>
@@ -79,23 +78,25 @@
           </select>
         </div>
 
+
      
-
-          
-
-          <div class="form-check">
+          <div class="user-input-field form-check">
             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
             <label class="form-check-label" for="defaultCheck1">
-              Default checkbox
+              Short tem Investment
             </label>
           </div>
         
           <!-- <button class="button" type="submit">Purchase</button> -->
-          <button type="submit" class="btn btn-primary my-1">Calculate</button>
+          <button type="submit" class="primary-blue-button">Calculate</button>
         
         </form>
       </div>
-      <div id="right-panel" class="col-md-8">Enter details first & calculate</div>
+      <div id="right-panel" class="col-md-7">
+        <div id="potential-returns">
+          <h3 class="inital-text">Enter details first & calculate</h3>
+        </div>
+      </div>
   </div>
 </div>
 
