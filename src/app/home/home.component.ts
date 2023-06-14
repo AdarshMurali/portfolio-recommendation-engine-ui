@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Player } from './player';
+import { FormBuilder } from '@angular/forms';
 import {DataService} from '../data.service';
 
 @Component({
@@ -11,7 +11,12 @@ export class HomeComponent implements OnInit {
 
   cars : any = [];
 
-  constructor(private dataService : DataService) { }
+  inputForm = this.formBuilder.group({
+    name: '',
+    address: ''
+  });
+
+  constructor(private dataService : DataService,  private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.dataService.sendGetRequest().subscribe(data=>{
@@ -20,5 +25,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  onSubmit(){
+    
+  }
 
 }

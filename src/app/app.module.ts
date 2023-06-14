@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { CommonModule } from "@angular/common";
 
 // import { MatToolbarModule,
@@ -12,28 +11,28 @@ import { CommonModule } from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LeftPanelComponent } from './left-panel/left-panel.component';
-import { RightPanelComponent } from './right-panel/right-panel.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ScriptComponent } from './script/script.component';
+import { RecommendationComponent } from './recommendation/recommendation.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LeftPanelComponent,
-    RightPanelComponent,
     HomeComponent,
     AboutComponent,
-    ScriptComponent
+    RecommendationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
