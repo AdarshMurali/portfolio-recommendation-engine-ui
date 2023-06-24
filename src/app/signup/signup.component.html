@@ -1,7 +1,7 @@
 <div id="signup-warpper">
     <div id="sign-up-form-div">
         <form id="input-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
-
+            <h3>Sign Up for Free</h3>
             <div class="form-group">
               <label>First Name</label>
               <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
@@ -33,7 +33,7 @@
             <small *ngIf="f.password.errors?.required" class="text-danger">Prassword is required</small>
         </div>
       </div>
-            <button type="submit" class="signup-blue-button" style="width: 100%;">Sign Up</button>
+            <button type="submit" class="signup-blue-button">Sign Up</button>
     
           </form>
     </div>
