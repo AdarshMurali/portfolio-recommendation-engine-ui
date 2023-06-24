@@ -1,0 +1,32 @@
+#signup-warpper{
+    #sign-up-form-div{
+        background-color:  #fef1e8;
+        padding: 100px 0;
+        #input-form{
+            padding: 50px;
+            width: 25%;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            height: 600px;
+        }
+        .primary-blue-button{
+            padding: 10px 20px;
+            line-height: 20px;
+            font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
+            font-size: 12PX;
+            font-weight: 600;
+            color: #fff;
+            background-color: #1c4da0;
+            cursor: pointer;
+            transition: 0.1s linear;
+            border-radius: 5px;
+            border: 0.1rem solid #1c4da0;
+            &:hover  {
+                transition: .1s linear;
+            }
+        }
+    }
+}
+

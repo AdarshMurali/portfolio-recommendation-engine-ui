@@ -1,0 +1,40 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrls: ['./signup.component.scss']
+})
+export class SignupComponent implements OnInit {
+
+   
+  submitted = false;
+
+  inputForm : FormGroup = this.formBuilder.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    preference: ['', [Validators.required]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
+  });
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
+  }
+
+    // / convenience getter for easy access to form fields
+    get f() { return this.inputForm.controls; }
+
+    onSubmit(){
+      this.submitted = true;
+  
+      // stop here if form is invalid
+      if (this.inputForm.invalid) {
+          return;
+      }
+  
+      alert('SUCCESS!! :-)')
+    }
+
+}

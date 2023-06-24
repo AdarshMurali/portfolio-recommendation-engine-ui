@@ -2,12 +2,14 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { RecommendationComponent } from './recommendation/recommendation.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path:  'home', component:  HomeComponent},
-  { path: 'recommendation', component : RecommendationComponent}
+  { path: '', redirectTo: 'signup', pathMatch: 'full'},
+  { path:  'login', component:  LoginComponent},
+  { path:  'signup', component:  SignupComponent},
+  { path:  'home', component:  HomeComponent}
 ];
 
 @NgModule({
