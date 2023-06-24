@@ -1,9 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "open-sans" Roboto, "Helvetica Neue", sans-serif; }
 
 @font-face {
     font-family: 'OpenSans-Bold';
     src: url('./assets/fonts/open-sans/OpenSans-Bold.ttf');
-  }
+}
+
+@font-face {
+    font-family: 'OpenSans-BoldItalic';
+    src: url('./assets/fonts/open-sans/OpenSans-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-ExtraBold';
+    src: url('./assets/fonts/open-sans/OpenSans-ExtraBold.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-ExtraBoldItalic';
+    src: url('./assets/fonts/open-sans/OpenSans-ExtraBoldItalic.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-Ialic';
+    src: url('./assets/fonts/open-sans/OpenSans-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('./assets/fonts/open-sans/OpenSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-LightIalic';
+    src: url('./assets/fonts/open-sans/OpenSans-LightItalic.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('./assets/fonts/open-sans/OpenSans-Regular.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('./assets/fonts/open-sans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiBoldItalic';
+    src: url('./assets/fonts/open-sans/OpenSans-SemiBoldItalic.ttf');
+}
