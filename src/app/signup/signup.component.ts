@@ -8,8 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
 
-   
-  submitted = false;
+  public submitted : boolean = false;
 
   inputForm : FormGroup = this.formBuilder.group({
     firstName: ['', Validators.required, Validators.maxLength(6)],
@@ -18,7 +17,8 @@ export class SignupComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {
+    }
 
   ngOnInit(): void {
   }

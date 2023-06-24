@@ -1,19 +1,28 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+
 #login-warpper{
+    height: 100%;
+    width: 100%;
     #login-form-div{
         background-color:  #fef1e8;
         padding: 100px 0;
         #input-form{
             #form-heading{
-
+                font-size: 42px;
+                text-align: center;
+                font-family: 'OpenSans-SemiBold';
             }
-            font-family: 'OpenSans-Bold';
             padding: 50px;
             width: 25%;
             margin: 0 auto;
             background-color: white;
             border-radius: 15px;
             border: 2px solid rgba(0, 0, 0, 0.08);
-            height: 400px;
+            // height: 60%;
             .form-group{
                 margin-bottom: 30px;
             }
@@ -21,7 +30,6 @@
                 width: 100%;
                 padding: 10px 20px;
                 line-height: 20px;
-                font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
                 font-size: 12PX;
                 font-weight: 600;
                 color: #fff;
