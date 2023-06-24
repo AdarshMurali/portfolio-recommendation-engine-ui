@@ -12,9 +12,9 @@ export class SignupComponent implements OnInit {
   submitted = false;
 
   inputForm : FormGroup = this.formBuilder.group({
-    firstName: ['', Validators.required],
+    firstName: ['', Validators.required, Validators.maxLength(6)],
     lastName: ['', Validators.required],
-    email: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
