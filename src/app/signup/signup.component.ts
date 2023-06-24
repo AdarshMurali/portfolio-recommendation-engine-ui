@@ -33,8 +33,15 @@ export class SignupComponent implements OnInit {
       if (this.inputForm.invalid) {
           return;
       }
+
+      var signupRequest = {
+        firstName : this.inputForm.controls.firstName.value,
+        lastName : this.inputForm.controls.lastName.value,
+        email : this.inputForm.controls.email.value,
+        password : this.inputForm.controls.password.value,
+      }
   
-      alert('SUCCESS!! :-)')
+      console.log(signupRequest);
     }
 
 }
