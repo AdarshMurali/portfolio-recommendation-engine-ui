@@ -46,9 +46,13 @@ export class SignupComponent implements OnInit {
       }
       console.log(signupRequest);
       this.dataService.post('/user/signup', signupRequest).subscribe(
-         data => {
+         (data : any) => {
           console.log(data);
-          this.router.navigateByUrl('/home');
+          if(data.user.id){
+            this.router.navigateByUrl('/home');
+          }else{
+            console.log('raise error');
+          }
       },
       error => {
           console.error('There was an error!', error);
