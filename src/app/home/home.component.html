@@ -1,36 +1,76 @@
-<div id="home">
-  <div id="car-table">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Company</th>
-        <th scope="col">Name</th>
-        <th scope="col">Color</th>
-        <th scope="col">Price</th>
-        <th scope="col">Model</th>
-        <th scope="col">First Owner</th>
-        <th scope="col">Number</th>
-        <th scope="col">Fule Type</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let car of cars">
-        <th scope="row">{{car.id}}</th>
-        <td>{{car.company}}</td>
-        <td>{{car.name}}</td>
-        <td>{{car.color}}</td>
-        <td>{{car.price | currency : 'INR'}}</td>
-        <td>{{car.model}}</td>
-        <td>{{car.firstowner === 'Y' ? 'First Owner' : 'Second Owner'}}</td>
-        <td>{{car.number}}</td>
-        <td>{{car.fuletype | titlecase}} </td>
-      </tr>
-    </tbody>
-  </table>
+<!-- https://getbootstrap.com/docs/4.0/components/forms/ -->
+<div id="home-wrapper">
+  <div id="top">
+        <div id="header">
+          <section class="content-wrapper-header d-inline-flex align-items-center mb-0">
+          <div class="savings-calc-logo">
+              <img src="/assets/images/saving-calc-icon.svg" alt="tools-img" class="vr-tools-icon" height="60" width="60" id="investment-icon">
+          </div>
+          <h1 class="ml-4 mb-0 calc-title">Portfolio Recommendation Engine</h1>
+          </section>
+          <p class="more vr-para-tools p--section-desc mb0" id="show-more-less">
+          <span class="text-truncated">
+            Recommendation engines are advanced data filtering systems that use behavioral data, computer learning, and statistical modeling to predict the content, product, or services customers will like.
+          </span>
+          </p>                                    
+        </div>
   </div>
-  <div class="row"> 
-      <app-left-panel class="col-md-6"></app-left-panel>
-      <app-right-panel class="col-md-6"></app-right-panel>
+  <div id="middle" class="row"> 
+      <div id="left-panel" class="col-md-5">
+        <form id="input-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label>Investment Amount</label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                <div *ngIf="f.firstName.errors.required">First Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Risk Type</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+          </div>
+      </div>
+      <div class="form-group">
+        <label>Investment Duration</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+        <div class="form-group">
+            <label for="preference">Investment Sector</label>
+            <select id="preference" formControlName="preference" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.preference.errors }">
+              <option selected>Choose...</option>
+              <option>Technology</option>
+              <option>Energy</option>
+              <option>Finance</option>
+            </select>
+            <div *ngIf="submitted && f.preference.errors" class="invalid-feedback">
+              <div *ngIf="f.preference.errors.required">Preference is required</div>
+          </div>
+        </div>
+          <button type="submit" class="primary-blue-button">Calculate</button>
+        </form>
+      </div>
+      <div id="right-panel" class="col-md-7">
+        <div id="potential-returns">
+          <h3 class="inital-text">Enter details first & calculate</h3>
+        </div>
+      </div>
+  </div>
+  <!-- <div class="bg"></div> -->
+  <div id="bottom">
+
   </div>
 </div>
+
