@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "HelloWorld": {
+    "portfolio-recommendation-engine-ui": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "HelloWorld:build:production"
+              "browserTarget": "portfolio-recommendation-engine-ui:build:production"
             },
             "development": {
-              "browserTarget": "HelloWorld:build:development"
+              "browserTarget": "portfolio-recommendation-engine-ui:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "HelloWorld:build"
+            "browserTarget": "portfolio-recommendation-engine-ui:build"
           }
         },
         "test": {
@@ -110,9 +110,12 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
   },
-  "defaultProject": "HelloWorld"
+  "defaultProject": "portfolio-recommendation-engine-ui"
 }
