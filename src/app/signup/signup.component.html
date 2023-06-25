@@ -2,6 +2,23 @@
     <div id="sign-up-form-div">
         <form id="input-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
             <h3 id="form-heading">Sign Up for Free</h3>
+            <div class="social-signup">
+              <div class="social-signup-button-wrapper">
+                <a href="#" class="fb btn">
+                <i class="fa fa-facebook fa-fw"></i> Sign Up with Facebook
+                </a>
+              </div>
+              <div class="social-signup-button-wrapper">
+                <a href="#" class="twitter btn">
+                  <i class="fa fa-twitter fa-fw"></i> Sign Up with Twitter
+                </a>
+              </div>
+              <div class="social-signup-button-wrapper">
+                <a href="#" class="google btn">
+                  <i class="fa fa-google fa-fw"></i> Sign Up with Google+
+                </a>
+              </div>
+          </div>
             <div class="form-group">
               <label>First Name</label>
               <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
