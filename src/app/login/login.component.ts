@@ -41,14 +41,18 @@ export class LoginComponent implements OnInit {
         }
     
         console.log(loginRequest);
-      //   this.dataService.post('/login', loginRequest).subscribe(
-      //     data => {
-      //      console.log(data);
-      //      this.router.navigateByUrl('/home');
-      //  },
-      //  error => {
-      //      console.error('There was an error!', error);
-      //  });
+        this.dataService.post('/user/login', loginRequest).subscribe(
+          (data : any) => {
+           console.log(data);
+           if(data.user){
+             this.router.navigateByUrl('/home');
+           }else{
+             console.log('raise error');
+           }
+       },
+       error => {
+           console.error('There was an error!', error);
+       });
 
         this.router.navigateByUrl('/home');
       }
