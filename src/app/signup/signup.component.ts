@@ -39,22 +39,22 @@ export class SignupComponent implements OnInit {
       }
 
       var signupRequest = {
-        firstName : this.inputForm.controls.firstName.value,
-        lastName : this.inputForm.controls.lastName.value,
+        firstname : this.inputForm.controls.firstName.value,
+        lastname : this.inputForm.controls.lastName.value,
         email : this.inputForm.controls.email.value,
         password : this.inputForm.controls.password.value,
       }
       console.log(signupRequest);
-      // this.dataService.post('/signup', signupRequest).subscribe(
-      //    data => {
-      //     console.log(data);
-      //     this.router.navigateByUrl('/home');
-      // },
-      // error => {
-      //     console.error('There was an error!', error);
-      // });
+      this.dataService.post('/user/signup', signupRequest).subscribe(
+         data => {
+          console.log(data);
+          this.router.navigateByUrl('/home');
+      },
+      error => {
+          console.error('There was an error!', error);
+      });
 
-      this.router.navigateByUrl('/home');
+      // this.router.navigateByUrl('/home');
     }
 
 

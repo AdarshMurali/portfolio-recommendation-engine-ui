@@ -14,6 +14,6 @@ export class DataService {
   }
 
   post(url : string, request : any){
-    return this.httpClient.post(url, request);
+    return this.httpClient.post(this.REST_API_SERVER + url, request);
   }
 }
