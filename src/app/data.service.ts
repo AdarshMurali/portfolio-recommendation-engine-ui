@@ -9,11 +9,11 @@ export class DataService {
 
   constructor(private httpClient : HttpClient) { }
 
-  public sendGetRequest(){
-    return this.httpClient.get(this.REST_API_SERVER + "/carController/car");
+  get(url : any){
+    return this.httpClient.get(this.REST_API_SERVER + url);
   }
 
-  getLatestNews(url : string){
-    return this.httpClient.get(url);
+  post(url : string, request : any){
+    return this.httpClient.post(url, request);
   }
 }

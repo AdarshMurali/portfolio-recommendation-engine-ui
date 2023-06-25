@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +20,7 @@ export class SignupComponent implements OnInit {
     confirm_password: ['', Validators.required]
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private dataService : DataService) {
 
     }
 
@@ -43,8 +44,16 @@ export class SignupComponent implements OnInit {
         email : this.inputForm.controls.email.value,
         password : this.inputForm.controls.password.value,
       }
-  
       console.log(signupRequest);
+      // this.dataService.post('/signup', signupRequest).subscribe(
+      //    data => {
+      //     console.log(data);
+      //     this.router.navigateByUrl('/home');
+      // },
+      // error => {
+      //     console.error('There was an error!', error);
+      // });
+
       this.router.navigateByUrl('/home');
     }
 

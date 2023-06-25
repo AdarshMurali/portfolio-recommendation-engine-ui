@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from '../data.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private dataService : DataService) {
     }
 
   ngOnInit(): void {
@@ -40,6 +41,15 @@ export class LoginComponent implements OnInit {
         }
     
         console.log(loginRequest);
+      //   this.dataService.post('/login', loginRequest).subscribe(
+      //     data => {
+      //      console.log(data);
+      //      this.router.navigateByUrl('/home');
+      //  },
+      //  error => {
+      //      console.error('There was an error!', error);
+      //  });
+
         this.router.navigateByUrl('/home');
       }
 
