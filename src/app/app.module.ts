@@ -3,12 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from "@angular/common";
 
-// import { MatToolbarModule,
-//   MatIconModule,
-//   MatCardModule,
-//   MatButtonModule,
-//   MatProgressSpinnerModule } from '@angular/material';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -36,7 +30,8 @@ import { SignupComponent } from './signup/signup.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
