@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +19,7 @@ export class SignupComponent implements OnInit {
     confirm_password: ['', Validators.required]
   });
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
 
     }
 
@@ -44,6 +45,7 @@ export class SignupComponent implements OnInit {
       }
   
       console.log(signupRequest);
+      this.router.navigateByUrl('/home');
     }
 
 
