@@ -1,4 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// html, body { height: 100%; margin: 0; }
+// body { margin: 0; font-family: "OpenSans-Regular" Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "OpenSans-Regular" Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* use viewport-relative units to cover page fully */
+body {
+//   height: 100vh;
+height: 100%;
+  width: 100vw;
+  background-color:  #fef1e8;
+}
+
+/* include border and padding in element width and height */
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('./assets/fonts/open-sans/OpenSans-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-BoldItalic';
+    src: url('./assets/fonts/open-sans/OpenSans-BoldItalic.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-ExtraBold';
+    src: url('./assets/fonts/open-sans/OpenSans-ExtraBold.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-ExtraBoldItalic';
+    src: url('./assets/fonts/open-sans/OpenSans-ExtraBoldItalic.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-Ialic';
+    src: url('./assets/fonts/open-sans/OpenSans-Italic.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('./assets/fonts/open-sans/OpenSans-Light.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-LightIalic';
+    src: url('./assets/fonts/open-sans/OpenSans-LightItalic.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('./assets/fonts/open-sans/OpenSans-Regular.ttf');
+}
+
+
+@font-face {
+    font-family: 'OpenSans-SemiBold';
+    src: url('./assets/fonts/open-sans/OpenSans-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: 'OpenSans-SemiBoldItalic';
+    src: url('./assets/fonts/open-sans/OpenSans-SemiBoldItalic.ttf');
+}

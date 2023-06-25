@@ -1,0 +1,88 @@
+#signup-warpper{
+    height: 100%;
+    width: 100%;
+    background-color:  #fef1e8;
+    #sign-up-form-div{
+        padding: 20px 0;
+        #input-form{
+            padding: 25px 50px;
+            width: 25%;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 15px;
+            border: 2px solid rgba(0, 0, 0, 0.08);
+            #form-heading{
+                font-size: 42px;
+                text-align: center;
+                font-family: 'OpenSans-Regular';
+                margin-bottom: 40px;
+            }
+            .social-signup{
+                .social-signup-button-wrapper{
+                    margin-bottom: 10px;
+                    a {
+                        width: 100%;
+                    }
+                    }
+                    .fb {
+                        background-color: #3B5998;
+                        color: white;
+                      }
+                      
+                      .twitter {
+                        background-color: #55ACEE;
+                        color: white;
+                      }
+                      
+                      .google {
+                        background-color: #dd4b39;
+                        color: white;
+                      }
+            }
+            #break{
+                margin-bottom: 30px;
+                .horizontal_dotted_line{
+                    width: 100%;
+                    display: flex;
+                    margin-top: 20px;
+                    font-size: 10px;
+                   } 
+                   #text-message{
+                    margin: 0 5px;
+                    font-family: 'OpenSans-SemiBold';
+                   }
+                   .dot{
+                     flex: 1;
+                     border-bottom: 1px dotted black;
+                     height: 0.6em;
+                   }
+            }
+            .form-group{
+                margin-bottom: 20px;
+            }
+            .signup-blue-button{
+                width: 100%;
+                padding: 10px 20px;
+                line-height: 20px;
+                font-size: 12PX;
+                font-weight: 600;
+                color: #fff;
+                background-color: #1c4da0;
+                cursor: pointer;
+                transition: 0.1s linear;
+                border-radius: 5px;
+                border: 0.1rem solid #1c4da0;
+                &:hover  {
+                    transition: .1s linear;
+                }
+            }
+        }
+        #login-div{
+            p {
+                margin-top: 20px;
+                text-align: center;
+            }
+        }
+    }
+}
+
