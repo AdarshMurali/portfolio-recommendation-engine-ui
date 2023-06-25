@@ -14,7 +14,8 @@
             #form-heading{
                 font-size: 42px;
                 text-align: center;
-                font-family: 'OpenSans-SemiBold';
+                font-family: 'OpenSans-Regular';
+                margin-bottom: 40px;
             }
             .social-login{
                 .social-login-button-wrapper{
@@ -39,11 +40,22 @@
                       }
             }
             #break{
-                p {
-                    font-size: 12px;
-                    text-align: center;
-                    margin-top: 35px;
-                }
+                margin-bottom: 30px;
+                .horizontal_dotted_line{
+                    width: 100%;
+                    display: flex;
+                    margin-top: 20px;
+                    font-size: 10px;
+                   } 
+                   #text-message{
+                    margin: 0 5px;
+                    font-family: 'OpenSans-SemiBold';
+                   }
+                   .dot{
+                     flex: 1;
+                     border-bottom: 1px dotted black;
+                     height: 0.6em;
+                   }
             }
             .form-group{
                 margin-bottom: 30px;
