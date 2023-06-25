@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signup',
@@ -14,10 +14,12 @@ export class SignupComponent implements OnInit {
     firstName: ['', Validators.required, Validators.maxLength(6)],
     lastName: ['', Validators.required],
     email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
+    password: ['', [Validators.required, Validators.minLength(6)]],
+    confirm_password: ['', Validators.required]
   });
 
   constructor(private formBuilder: FormBuilder) {
+
     }
 
   ngOnInit(): void {
@@ -43,5 +45,24 @@ export class SignupComponent implements OnInit {
   
       console.log(signupRequest);
     }
+
+
+    // All is this method
+onPasswordChange() {
+  if (this.confirm_password.value == this.password.value) {
+    this.confirm_password.setErrors(null);
+  } else {
+    this.confirm_password.setErrors({ mismatch: true });
+  }
+}
+
+// getting the form control elements
+get password(): AbstractControl {
+  return this.inputForm.controls['password'];
+}
+
+get confirm_password(): AbstractControl {
+  return this.inputForm.controls['confirm_password'];
+}
 
 }
