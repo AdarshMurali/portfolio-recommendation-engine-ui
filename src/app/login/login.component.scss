@@ -36,6 +36,28 @@
                     transition: .1s linear;
                 }
             }
+            .social-login{
+                .social-login-button-wrapper{
+                    margin-bottom: 10px;
+                    a {
+                        width: 100%;
+                    }
+                }
+                    .fb {
+                        background-color: #3B5998;
+                        color: white;
+                      }
+                      
+                      .twitter {
+                        background-color: #55ACEE;
+                        color: white;
+                      }
+                      
+                      .google {
+                        background-color: #dd4b39;
+                        color: white;
+                      }
+                }
         }
         #signup-div{
             p {
