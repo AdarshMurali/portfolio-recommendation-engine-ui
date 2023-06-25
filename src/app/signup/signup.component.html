@@ -24,22 +24,22 @@
           </div>
             <div class="form-group">
               <label>First Name</label>
-              <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+              <input type="text" formControlName="firstName" maxlength="20" class="form-control" onkeydown="return /[a-z]/i.test(event.key)"  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
               <div *ngIf="(f.firstName.invalid && f.firstName.touched) || f.firstName.dirty">
                 <small *ngIf="f.firstName.errors?.required" class="text-danger">First Name is required</small>
             </div>
           </div>
           <div class="form-group">
               <label>Last name</label>
-              <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+              <input type="text" formControlName="lastName" maxlength="20" class="form-control" onkeydown="return /[a-z]/i.test(event.key)"  [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
               <div *ngIf="(f.lastName.invalid && f.lastName.touched) || f.lastName.dirty">
                 <small *ngIf="f.lastName.errors?.required" class="text-danger">Last Name is required</small>
             </div>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
-            pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$" 
+            <input type="text" formControlName="email" maxlength="30" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
+            pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
             />
             <div *ngIf="(f.email.invalid && f.email.touched) || f.email.dirty">
                 <small *ngIf="f.email.errors?.required" class="text-danger">Email is required</small>
@@ -48,14 +48,14 @@
         </div>
         <div class="form-group">
           <label>Password</label>
-          <input type="text" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  (change)="onPasswordChange()" />
+          <input type="text" formControlName="password" maxlength="20" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  (change)="onPasswordChange()" />
           <div *ngIf="(f.password.invalid && f.password.touched) || f.password.dirty">
             <small *ngIf="f.password.errors?.required" class="text-danger">Prassword is required</small>
         </div>
       </div>
       <div class="form-group">
         <label>Confirm Password</label>
-        <input type="text" formControlName="confirm_password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }"  (change)="onPasswordChange()"/>
+        <input type="text" formControlName="confirm_password" maxlength="20" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.confirm_password.errors }"  (change)="onPasswordChange()"/>
         <div *ngIf="(f.confirm_password.invalid && f.confirm_password.touched) || f.password.dirty">
           <small *ngIf="f.confirm_password.errors?.required" class="text-danger">Confirm Prassword is required</small>
           <small *ngIf="confirm_password.hasError('mismatch')" class="text-danger">Password do not match.</small>
