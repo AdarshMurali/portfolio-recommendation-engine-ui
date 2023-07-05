@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
         this.dataService.post('/user/login', loginRequest).subscribe(
           (data : any) => {
            console.log(data);
-           if(data.user){
+           if(data.user.userid){
              this.router.navigateByUrl('/home');
            }else{
              console.log('raise error');
