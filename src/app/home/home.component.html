@@ -22,9 +22,12 @@
           <div class="form-group">
             <label>Investment Amount</label>
             <input type="text" formControlName="investmentAmount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.investmentAmount.errors }" />
-            <div *ngIf="submitted && f.investmentAmount.errors" class="invalid-feedback">
+            <!-- <div *ngIf="submitted && f.investmentAmount.errors" class="invalid-feedback">
                 <div *ngIf="f.investmentAmount.errors.required">Investment Amount is required</div>
-            </div>
+            </div> -->
+            <div *ngIf="(f.investmentAmount.invalid && f.investmentAmount.touched) || f.investmentAmount.dirty">
+              <small *ngIf="f.investmentAmount.errors?.required" class="text-danger">Investment Amount is required</small>
+          </div>
         </div>
         <div class="form-group">
           <label>Age</label>

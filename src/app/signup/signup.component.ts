@@ -60,7 +60,6 @@ export class SignupComponent implements OnInit {
           console.error('There was an error!', error);
       });
 
-      // this.router.navigateByUrl('/home');
     }
 
 

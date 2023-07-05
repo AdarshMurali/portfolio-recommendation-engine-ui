@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { PortfolioRecomService } from '../portfolio-recom.service';
 import { User } from '../shared/models/user';
 
@@ -14,20 +14,31 @@ export class HomeComponent implements OnInit {
  
   submitted = false;
   loggedInUser! : User ;
-
-  inputForm : FormGroup = this.formBuilder.group({
-    investmentAmount : ['', Validators.required],
-    age: ['', Validators.required],
-    investmentSector : ['', [Validators.required]],
-    marketCapitalization : ['', Validators.required],
-    portfolioRateOfReturn : ['', Validators.required]
-});
- 
+  inputForm! : FormGroup;
 
   constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService) { }
 
   ngOnInit(): void {
+    this.setForm();
     this.loggedInUser =  this.portfolioRecomService.getUser();
+  }
+
+  setForm(){
+    console.log('calling setform');
+    this.inputForm  = this.formBuilder.group({
+      investmentAmount : ['', Validators.required],
+      age: ['', Validators.required],
+      investmentSector : ['', [Validators.required]],
+      marketCapitalization : ['', Validators.required],
+      portfolioRateOfReturn : ['', Validators.required]
+  });
+  }
+
+  reset() {
+    this.inputForm.reset();
+    this.inputForm.markAsPristine;
+    this.inputForm.markAsUntouched
+    this.setForm();
   }
 
   // / convenience getter for easy access to form fields
@@ -47,11 +58,18 @@ export class HomeComponent implements OnInit {
           marketCapitalization : this.inputForm.controls.marketCapitalization.value,
           portfolioRateOfReturn : this.inputForm.controls.portfolioRateOfReturn.value,
           userId : this.loggedInUser.userid,
+          // userId : 3,
     }
     console.log(preferenceRequest);
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
-        console.log(data);
+        if(data.customerPreferenceId){
+          console.log(data);
+          this.reset();
+          this.inputForm.reset(this.inputForm.value)
+        }else{
+
+        }
     },
     error => {
         console.error('There was an error!', error);
