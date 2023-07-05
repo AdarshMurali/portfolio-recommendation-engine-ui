@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PortfolioRecomService } from '../portfolio-recom.service';
+import { User } from '../shared/models/user';
 
 @Component({
   selector: 'app-home',
@@ -11,25 +13,21 @@ export class HomeComponent implements OnInit {
 
  
   submitted = false;
+  loggedInUser! : User ;
 
   inputForm : FormGroup = this.formBuilder.group({
     investmentAmount : ['', Validators.required],
     age: ['', Validators.required],
-    investmentDuration : ['', [Validators.required]],
     investmentSector : ['', [Validators.required]],
     marketCapitalization : ['', Validators.required],
     portfolioRateOfReturn : ['', Validators.required]
 });
  
 
-  constructor(private dataService : DataService,  private formBuilder: FormBuilder) { }
+  constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService) { }
 
   ngOnInit(): void {
-    // this.dataService.sendGetRequest().subscribe(data=>{
-    //   console.log(data);
-    //   this.cars = data;
-    // });
-  
+    this.loggedInUser =  this.portfolioRecomService.getUser();
   }
 
   // / convenience getter for easy access to form fields
@@ -37,7 +35,6 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.inputForm.invalid) {
         return;
@@ -46,11 +43,10 @@ export class HomeComponent implements OnInit {
     var preferenceRequest = {
           investmentAmount : this.inputForm.controls.investmentAmount.value,
           age : this.inputForm.controls.age.value,
-          investmentDuration : this.inputForm.controls.investmentDuration.value,
           investmentSector : this.inputForm.controls.investmentSector.value,
           marketCapitalization : this.inputForm.controls.marketCapitalization.value,
           portfolioRateOfReturn : this.inputForm.controls.portfolioRateOfReturn.value,
-          userId : 1,
+          userId : this.loggedInUser.userid,
     }
     console.log(preferenceRequest);
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
