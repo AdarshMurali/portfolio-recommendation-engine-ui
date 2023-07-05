@@ -13,10 +13,12 @@ export class HomeComponent implements OnInit {
   submitted = false;
 
   inputForm : FormGroup = this.formBuilder.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
-    preference: ['', [Validators.required]],
-    password: ['', [Validators.required, Validators.minLength(6)]]
+    investmentAmount : ['', Validators.required],
+    age: ['', Validators.required],
+    investmentDuration : ['', [Validators.required]],
+    investmentSector : ['', [Validators.required]],
+    marketCapitalization : ['', Validators.required],
+    portfolioRateOfReturn : ['', Validators.required]
 });
  
 
@@ -41,7 +43,23 @@ export class HomeComponent implements OnInit {
         return;
     }
 
-    alert('SUCCESS!! :-)')
+    var preferenceRequest = {
+          investmentAmount : this.inputForm.controls.investmentAmount.value,
+          age : this.inputForm.controls.age.value,
+          investmentDuration : this.inputForm.controls.investmentDuration.value,
+          investmentSector : this.inputForm.controls.investmentSector.value,
+          marketCapitalization : this.inputForm.controls.marketCapitalization.value,
+          portfolioRateOfReturn : this.inputForm.controls.portfolioRateOfReturn.value,
+          userId : 1,
+    }
+    console.log(preferenceRequest);
+    this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
+       (data : any) => {
+        console.log(data);
+    },
+    error => {
+        console.error('There was an error!', error);
+    });
   }
 
 }
