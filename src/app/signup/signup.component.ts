@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { PortfolioRecomService } from '../portfolio-recom.service';
 
 @Component({
   selector: 'app-signup',
@@ -20,7 +21,7 @@ export class SignupComponent implements OnInit {
     confirm_password: ['', Validators.required]
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private dataService : DataService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private dataService : DataService, private portfolioRecomService : PortfolioRecomService) {
 
     }
 
@@ -48,7 +49,8 @@ export class SignupComponent implements OnInit {
       this.dataService.post('/user/signup', signupRequest).subscribe(
          (data : any) => {
           console.log(data);
-          if(data.user.id){
+          if(data.user.userid){
+            this.portfolioRecomService.setUser(data.user);
             this.router.navigateByUrl('/home');
           }else{
             console.log('raise error');
@@ -58,7 +60,6 @@ export class SignupComponent implements OnInit {
           console.error('There was an error!', error);
       });
 
-      // this.router.navigateByUrl('/home');
     }
 
 

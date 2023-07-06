@@ -21,58 +21,54 @@
 
           <div class="form-group">
             <label>Investment Amount</label>
-            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
-            <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
-                <div *ngIf="f.firstName.errors.required">First Name is required</div>
-            </div>
+            <input type="text" formControlName="investmentAmount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.investmentAmount.errors }" />
+            <!-- <div *ngIf="submitted && f.investmentAmount.errors" class="invalid-feedback">
+                <div *ngIf="f.investmentAmount.errors.required">Investment Amount is required</div>
+            </div> -->
+            <div *ngIf="(f.investmentAmount.invalid && f.investmentAmount.touched) || f.investmentAmount.dirty">
+              <small *ngIf="f.investmentAmount.errors?.required" class="text-danger">Investment Amount is required</small>
+          </div>
         </div>
         <div class="form-group">
           <label>Age</label>
-          <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+          <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
+          <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+              <div *ngIf="f.age.errors.required">Age is required</div>
           </div>
       </div>
-      <div class="form-group">
-        <label>Investment Duration</label>
-        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
-        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
-            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
-        </div>
-    </div>
         <div class="form-group">
-            <label for="preference">Investment Sector</label>
-            <select id="preference" formControlName="preference" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.preference.errors }">
+            <label for="investmentSector">Investment Sector</label>
+            <select id="investmentSector" formControlName="investmentSector" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.investmentSector.errors }">
               <option selected>Choose...</option>
               <option>Technology</option>
               <option>Energy</option>
               <option>Finance</option>
             </select>
-            <div *ngIf="submitted && f.preference.errors" class="invalid-feedback">
-              <div *ngIf="f.preference.errors.required">Preference is required</div>
+            <div *ngIf="submitted && f.investmentSector.errors" class="invalid-feedback">
+              <div *ngIf="f.investmentSector.errors.required">Investment Sector is required</div>
           </div>
         </div>
         <div class="form-group">
-          <label for="preference">Market Capitalization</label>
-          <select id="preference" formControlName="preference" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.preference.errors }">
+          <label for="marketCapitalization">Market Capitalization</label>
+          <select id="marketCapitalization" formControlName="marketCapitalization" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.marketCapitalization.errors }">
             <option selected>Choose...</option>
             <option>Large</option>
             <option>Mid</option>
             <option>Small</option>
           </select>
-          <div *ngIf="submitted && f.preference.errors" class="invalid-feedback">
-            <div *ngIf="f.preference.errors.required">Preference is required</div>
+          <div *ngIf="submitted && f.marketCapitalization.errors" class="invalid-feedback">
+            <div *ngIf="f.marketCapitalization.errors.required">Market Capitalization is required</div>
         </div>
       </div>
       <div class="form-group">
-        <label for="preference">Portfolio Rate Of Return</label>
-        <select id="preference" formControlName="preference" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.preference.errors }">
+        <label for="portfolioRateOfReturn">Portfolio Rate Of Return</label>
+        <select id="portfolioRateOfReturn" formControlName="portfolioRateOfReturn" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.portfolioRateOfReturn.errors }">
           <option selected>Choose...</option>
           <option>Average</option>
           <option>Volatile</option>
         </select>
-        <div *ngIf="submitted && f.preference.errors" class="invalid-feedback">
-          <div *ngIf="f.preference.errors.required">Preference is required</div>
+        <div *ngIf="submitted && f.portfolioRateOfReturn.errors" class="invalid-feedback">
+          <div *ngIf="f.portfolioRateOfReturn.errors.required">Portfolio Rate Of Return is required</div>
       </div>
     </div>
           <button type="submit" class="primary-blue-button">Calculate</button>
