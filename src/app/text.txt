@@ -1,0 +1,6 @@
+ https://www.c-sharpcorner.com/blogs/a-guide-on-how-to-deploy-angular-applications-to-github-pages
+ 
+
+npm i angular-cli-ghpages --save-dev
+ ng build --prod --base-href "https://portfolio-360.github.io/portfolio-recommendation-engine-ui/"
+npx angular-cli-ghpages --dir=dist/HelloWorld

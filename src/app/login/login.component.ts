@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../data.service';
+import { PortfolioRecomService } from '../portfolio-recom.service';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class LoginComponent implements OnInit {
     password: ['', [Validators.required, Validators.minLength(6)]]
   });
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private dataService : DataService) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private dataService : DataService, private portfolioRecomService : PortfolioRecomService) {
     }
 
   ngOnInit(): void {
@@ -44,7 +45,8 @@ export class LoginComponent implements OnInit {
         this.dataService.post('/user/login', loginRequest).subscribe(
           (data : any) => {
            console.log(data);
-           if(data.user){
+           if(data.user.userid){
+            this.portfolioRecomService.setUser(data.user);
              this.router.navigateByUrl('/home');
            }else{
              console.log('raise error');
@@ -53,8 +55,6 @@ export class LoginComponent implements OnInit {
        error => {
            console.error('There was an error!', error);
        });
-
-        this.router.navigateByUrl('/home');
       }
 
 }
