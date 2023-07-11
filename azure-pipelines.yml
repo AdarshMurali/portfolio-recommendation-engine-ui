@@ -9,9 +9,3 @@ steps:
   inputs:
     containerRegistry: 'AdarshDockerHub'
     command: 'login'
-- task: Docker@2
-  inputs:
-    containerRegistry: 'AdarshDockerHub'
-    repository: 'adarshmurali/aadya_nginx'
-    command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
