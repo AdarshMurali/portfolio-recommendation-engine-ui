@@ -15,3 +15,9 @@ steps:
     repository: 'adarshmurali/aadya_nginx'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: 'AdarshDockerHub'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
