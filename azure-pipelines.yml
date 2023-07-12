@@ -21,4 +21,4 @@ steps:
     dockerRegistryEndpoint: 'AdarshDockerHub'
     dockerComposeFile: '**/docker-compose.yml'
     action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'docker-compose up'
+    dockerComposeCommand: 'rm'
