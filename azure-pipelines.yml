@@ -15,10 +15,7 @@ steps:
     repository: 'adarshmurali/aadya_nginx'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
-- task: DockerCompose@0
+- task: CopyFiles@2
   inputs:
-    containerregistrytype: 'Container Registry'
-    dockerRegistryEndpoint: 'AdarshDockerHub'
-    dockerComposeFile: '**/docker-compose.yml'
-    action: 'Run a Docker Compose command'
-    dockerComposeCommand: 'rm'
+    Contents: '**/docker-compose.yml'''
+    TargetFolder: '$(build.artifactstagingdirectory)'
