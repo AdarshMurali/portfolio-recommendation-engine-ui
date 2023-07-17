@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service';
+import {DataService} from '../services/data.service';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { PortfolioRecomService } from '../portfolio-recom.service';
 import { User } from '../shared/models/user';
+import { ColDef } from 'ag-grid-community';
 
 @Component({
   selector: 'app-home',
@@ -41,6 +42,22 @@ export class HomeComponent implements OnInit {
     this.setForm();
   }
 
+  columnDefs: ColDef[] = [
+    { field: 'make' },
+    { field: 'model' },
+    { field: 'price' }
+  ];
+  
+  rowData = [
+      { make: 'Toyota', model: 'Celica', price: 35000 },
+      { make: 'Ford', model: 'Mondeo', price: 32000 },
+      { make: 'Porsche', model: 'Boxster', price: 72000 }
+  ];
+
+  defaultColDef = {
+    sortable: true
+  };
+  
   // / convenience getter for easy access to form fields
   get f() { return this.inputForm.controls; }
 
