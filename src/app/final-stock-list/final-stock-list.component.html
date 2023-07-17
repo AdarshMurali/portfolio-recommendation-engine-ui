@@ -1,0 +1,25 @@
+<div>
+    <app-background></app-background>
+    <div id="middle"> 
+        <h3 id="center">STOCK CMP QUANTITY AMOUNT NOW:</h3>
+        <div id="left-panel">
+            <div style="margin-left: 5rem;" *ngFor="let stock of FinalStocks" >
+                <div id="inline-details">
+                    <input type="checkbox"/>
+                </div>
+                <div id="inline-details">
+                    {{stock.Symbol}}
+                </div>
+                <div id="inline-details">
+                    {{stock.StockName}}
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="primary-button red">Back</button>
+        <button type="submit" class="primary-button blue">Buy</button>
+    </div>
+    <!-- <div class="bg"></div> -->
+    <div id="bottom">
+        
+    </div>
+  </div>
