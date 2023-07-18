@@ -32,6 +32,8 @@ export class SignupComponent implements OnInit {
     get f() { return this.inputForm.controls; }
 
     onSubmit(){
+      this.router.navigateByUrl('/home'); //ToDo - Need to remove
+      
       this.submitted = true;
   
       // stop here if form is invalid
