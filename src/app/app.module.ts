@@ -13,6 +13,10 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { FinalStockListComponent } from './final-stock-list/final-stock-list.component';
+import { BackgroundComponent } from './background/background.component';
+import { RecommendationScreenComponent } from './recommendation-screen/recommendation-screen.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,10 @@ import { SignupComponent } from './signup/signup.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    FinalStockListComponent,
+    BackgroundComponent,
+    RecommendationScreenComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,8 @@ import { SignupComponent } from './signup/signup.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]

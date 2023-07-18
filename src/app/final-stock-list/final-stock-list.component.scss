@@ -1,0 +1,84 @@
+
+#middle{
+    border-radius: 15px;
+    width: 65%;
+    margin: 0 auto;
+    margin-top: -3%;
+    background-color: white;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+        #center {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+            margin-top: 2rem;
+        }
+        #left-panel{
+            padding: 4rem;
+            #inline-details{
+                display: inline-block;
+                margin: 0 2rem 2rem 2rem;
+            }
+            
+        }
+        .primary-blue-button{
+            float: right;
+            padding: 10px 20px;
+            line-height: 20px;
+            font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
+            font-size: 12PX;
+            font-weight: 600;
+            color: #fff;
+            background-color: #1c4da0;
+            cursor: pointer;
+            transition: 0.1s linear;
+            border-radius: 5px;
+            border: 0.1rem solid #1c4da0;
+            &:hover  {
+                transition: .1s linear;
+            }
+        }
+        .primary-blue-button-back{
+            float: left;
+            padding: 10px 20px;
+            line-height: 20px;
+            font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
+            font-size: 12PX;
+            font-weight: 600;
+            color: #fff;
+            background-color: #1c4da0;
+            cursor: pointer;
+            transition: 0.1s linear;
+            border-radius: 5px;
+            border: 0.1rem solid #1c4da0;
+            &:hover  {
+                transition: .1s linear;
+            }
+        }
+    
+        #right-panel{
+            background-color: rgba(28,77,160,.06);
+            #potential-returns{
+                margin: 20px 60px;
+                .inital-text{
+                    color: rgba(0,0,0,.25);
+                    font-family: "IBM-Plex-Sans-SemiBold";
+                }
+            }
+        }
+
+}
+.bg { 
+    /* The image used */
+    background-image: url("/assets/images/home-background.jpg");
+  
+    /* Full height */
+    height: 500px; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+#bottom{
+    height: 300px;
+}

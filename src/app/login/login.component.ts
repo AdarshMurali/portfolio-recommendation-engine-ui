@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { PortfolioRecomService } from '../portfolio-recom.service';
 
 
@@ -31,6 +31,9 @@ export class LoginComponent implements OnInit {
       get f() { return this.inputForm.controls; }
 
       onSubmit(){
+
+        this.router.navigateByUrl('/home'); //ToDo - Need to remove
+
         this.showErrorMessage = false;
         
         this.submitted = true;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { DataService } from '../data.service';
+import { DataService } from '../services/data.service';
 import { PortfolioRecomService } from '../portfolio-recom.service';
 
 @Component({
@@ -32,6 +32,8 @@ export class SignupComponent implements OnInit {
     get f() { return this.inputForm.controls; }
 
     onSubmit(){
+      this.router.navigateByUrl('/home'); //ToDo - Need to remove
+      
       this.submitted = true;
   
       // stop here if form is invalid

@@ -1,20 +1,6 @@
 <!-- https://getbootstrap.com/docs/4.0/components/forms/ -->
-<div id="home-wrapper">
-  <div id="top">
-        <div id="header">
-          <section class="content-wrapper-header d-inline-flex align-items-center mb-0">
-          <div class="savings-calc-logo">
-            <i class="fa fa-university" height="60" width="60" id="investment-icon" aria-hidden="true"></i>
-          </div>
-          <h1 class="ml-4 mb-0 calc-title">Portfolio Recommendation Engine</h1>
-          </section>
-          <p class="more vr-para-tools p--section-desc mb0" id="show-more-less">
-          <span class="text-truncated">
-            Recommendation engines are advanced data filtering systems that use behavioral data, computer learning, and statistical modeling to predict the content, product, or services customers will like.
-          </span>
-          </p>                                    
-        </div>
-  </div>
+<div>
+  <app-background></app-background>
   <div id="middle" class="row"> 
       <div id="left-panel" class="col-md-5">
         <form id="input-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
