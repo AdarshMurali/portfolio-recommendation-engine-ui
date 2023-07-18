@@ -6,41 +6,10 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class DataService {
-  
-  FinalStocks: StockDetails[] = [
-    {
-      Symbol: "GOOG",
-      AssetName: "Common Stock",
-      StockName: "Alphabet Inc Class C",
-      StockDescription: "Alphabet Inc. is an American multinational conglomerate headquartered in Mountain View, California. It was created through a restructuring of Google on October 2, 2015, and became the parent company of Google and several former Google subsidiaries. The two co-founders of Google remained as controlling shareholders, board members, and employees at Alphabet. Alphabet is the world's fourth-largest technology company by revenue and one of the world's most valuable companies."
-    },
-    {
-      Symbol: "MMM",
-      AssetName: "Common Stock",
-      StockName: "3M Company",
-      StockDescription: "The 3M Company is an American multinational conglomerate corporation operating in the fields of industry, worker safety, US health care, and consumer goods. The company produces over 60,000 products under several brands, including adhesives, abrasives, laminates, passive fire protection, personal protective equipment, window films, paint protection films, dental and orthodontic products, electrical and electronic connecting and insulating materials, medical products, car-care products, electronic circuits, healthcare software and optical films. It is based in Maplewood, a suburb of Saint Paul, Minnesota."
-    },
-    {
-      Symbol: "CCL",
-      AssetName: "Common Stock",
-      StockName: "Carnival Corporation",
-      StockDescription: "Carnival Corporation & plc is a British-American cruise operator, currently the world's largest travel leisure company, with a combined fleet of over 100 vessels across 10 cruise line brands."
-    },
-    {
-      Symbol: "HIG",
-      AssetName: "Common Stock",
-      StockName: "Hartford Financial Services Group",
-      StockDescription: "The Hartford Financial Services Group, Inc., usually known as The Hartford, is a United States-based investment and insurance company."
-    },
-  ]
 
   private REST_API_SERVER = "http://localhost:8080";
 
   constructor(private httpClient : HttpClient) { }
-  
-  public getFinalStockList() : Observable<StockDetails[]>{
-    return of(this.FinalStocks) 
-  }
 
   get(url : any){
     return this.httpClient.get(this.REST_API_SERVER + url);

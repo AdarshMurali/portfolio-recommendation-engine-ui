@@ -12,11 +12,20 @@ export class FinalStockListComponent implements OnInit {
   FinalStocks: StockDetails[] = []
   
   public getFinalStocks(){
-    this.dataService.getFinalStockList().subscribe(result => {
-      result.forEach(res => 
+    // this.dataService.getFinalStockList().subscribe(result => {
+    //   result.forEach(res => 
+    //     this.FinalStocks.push(res)
+    //     )
+    // });
+
+    this.dataService.getMock('assets/mockData/finalStock.json').subscribe((result : any) => {
+      result.forEach((res : any) => 
         this.FinalStocks.push(res)
         )
     });
+
+
+
   }
   test = ["1", "2", "3"]
   ngOnInit(): void {
