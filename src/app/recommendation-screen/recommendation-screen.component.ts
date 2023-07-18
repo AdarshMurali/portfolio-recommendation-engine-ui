@@ -21,18 +21,31 @@ export class RecommendationScreenComponent implements OnInit {
   }
 
     getUserRecommendation(){
-      var getRecommendationRequest = {
-        // userId : this.loggedInUser.userid,
-        userId : 3,
-      }
-      this.dataService.post('/CustomerPreference/getRecommendation', getRecommendationRequest).subscribe(
+
+    var getRecommendationRequest = {
+      // userId : this.loggedInUser.userid,
+      userId : 3,
+    }
+      // this.dataService.post('/CustomerPreference/getRecommendation', getRecommendationRequest).subscribe(
+      //     (data : any) => {
+      //       this.recommendedSecurities = data['recommendedSecurities'];
+      //       console.log(this.recommendedSecurities);
+      // },
+      // error => {
+      //     console.error('There was an error!', error);
+      // });
+
+      this.dataService.getMock('assets/mockData/recommendation.json').subscribe(
           (data : any) => {
             this.recommendedSecurities = data['recommendedSecurities'];
             console.log(this.recommendedSecurities);
-      },
-      error => {
-          console.error('There was an error!', error);
-      });
+        },
+        error => {
+            console.error('There was an error!', error);
+        });
+
+        
+
     }
     
 
