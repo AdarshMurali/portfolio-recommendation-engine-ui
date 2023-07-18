@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { User } from '../shared/models/user';
 import { PortfolioRecomService } from '../portfolio-recom.service';
+import {  Router } from '@angular/router';
 
 @Component({
   selector: 'app-recommendation-screen',
@@ -13,7 +14,7 @@ export class RecommendationScreenComponent implements OnInit {
   public recommendedSecurities! : any[] ;
   loggedInUser! : User ;
 
-  constructor(private dataService : DataService, private portfolioRecomService : PortfolioRecomService) { }
+  constructor(private dataService : DataService, private portfolioRecomService : PortfolioRecomService, private router: Router) { }
 
   ngOnInit(): void {
     this.loggedInUser =  this.portfolioRecomService.getUser();
@@ -43,10 +44,10 @@ export class RecommendationScreenComponent implements OnInit {
         error => {
             console.error('There was an error!', error);
         });
-
-        
-
     }
     
 
+    goToFinalStockList(){
+      this.router.navigateByUrl('/finallist');
+    }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockDetails } from '../models/StockDetails';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-final-stock-list',
@@ -8,7 +9,7 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./final-stock-list.component.scss']
 })
 export class FinalStockListComponent implements OnInit {
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) { }
   FinalStocks: StockDetails[] = []
   
   public getFinalStocks(){
@@ -31,6 +32,13 @@ export class FinalStockListComponent implements OnInit {
   ngOnInit(): void {
     this.getFinalStocks();
     console.log(this.FinalStocks)
+  }
+
+  goToRecommendationPage(){
+    this.router.navigateByUrl('/recommendation');
+  }
+  buyStocks(){
+      alert('Successfully purchased');
   }
 
 }

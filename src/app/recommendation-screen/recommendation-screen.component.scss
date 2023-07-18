@@ -1,3 +1,20 @@
 #recommendation-screen {
-    
+    #recommendation-screen-grid{
+        .primary-blue-button{
+            padding: 10px 20px;
+            line-height: 20px;
+            font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
+            font-size: 12PX;
+            font-weight: 600;
+            color: #fff;
+            background-color: #1c4da0;
+            cursor: pointer;
+            transition: 0.1s linear;
+            border-radius: 5px;
+            border: 0.1rem solid #1c4da0;
+            &:hover  {
+                transition: .1s linear;
+            }
+        }
+    }
 }
