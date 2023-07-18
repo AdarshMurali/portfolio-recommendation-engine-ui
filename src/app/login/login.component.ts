@@ -31,6 +31,9 @@ export class LoginComponent implements OnInit {
       get f() { return this.inputForm.controls; }
 
       onSubmit(){
+
+        this.router.navigateByUrl('/home'); //ToDo - Need to remove
+
         this.showErrorMessage = false;
         
         this.submitted = true;

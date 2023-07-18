@@ -1,0 +1,36 @@
+<div id="recommendation-screen">
+    <!-- <app-background></app-background> -->
+    <div id="recommendation-screen-grid">
+        <div class="app-table">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Ticker Symbol</th>
+                    <th scope="col">Security</th>
+                    <th scope="col">SecFilings</th>
+                    <th scope="col">GICS Sector</th>
+                    <th scope="col">GICS SubIndustry</th>
+                    <th scope="col">Date First Added</th>
+                    <th scope="col">Address Of Head Quarters</th>
+                    <th scope="col">CIK</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let recommendedSecurity of recommendedSecurities">
+                          <td></td>
+                          <td>{{recommendedSecurity.tickerSymbol}}</td>
+                          <td>{{recommendedSecurity.security}}</td>
+                          <td>{{recommendedSecurity.secFilings}}</td>
+                          <td>{{recommendedSecurity.gicsSector}}</td>
+                          <td>{{recommendedSecurity.gicsSubIndustry}}</td>
+                          <td>{{recommendedSecurity.dateFirstAdded}}</td>
+                          <td>{{recommendedSecurity.addressOfHeadQuarters}}</td>
+                          <td>{{recommendedSecurity.cik}}</td>
+                      </tr>
+                </tbody>
+              </table>
+              <button type="submit" class="primary-blue-button" (click)="goToFinalStockList()">FinalStocks</button>
+        </div>
+    </div>
+</div>
