@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { StockDetails } from '../models/StockDetails';
-import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  private REST_API_SERVER = "http://localhost:8080";
+  private REST_API_SERVER = environment.API_URL || "http://localhost:8080";
 
   constructor(private httpClient : HttpClient) { }
 
