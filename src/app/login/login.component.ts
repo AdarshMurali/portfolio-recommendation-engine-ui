@@ -32,8 +32,6 @@ export class LoginComponent implements OnInit {
 
       onSubmit(){
 
-        this.router.navigateByUrl('/home'); //ToDo - Need to remove
-
         this.showErrorMessage = false;
         
         this.submitted = true;
