@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DataService {
 
-  private REST_API_SERVER = environment.API_URL || "http://localhost:8080";
+  private REST_API_SERVER = environment.API_URL;
 
   constructor(private httpClient : HttpClient) { }
 
