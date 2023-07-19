@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class DataService {
 
-  private REST_API_SERVER = environment.API_URL;
+  private REST_API_SERVER = environment.backendUrl;
 
   constructor(private httpClient : HttpClient) { }
 
