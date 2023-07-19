@@ -17,6 +17,7 @@ import { AgGridModule } from 'ag-grid-angular';
 import { FinalStockListComponent } from './final-stock-list/final-stock-list.component';
 import { BackgroundComponent } from './background/background.component';
 import { RecommendationScreenComponent } from './recommendation-screen/recommendation-screen.component';
+import { ExistingRecommendationComponent } from './existing-recommendation/existing-recommendation.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { RecommendationScreenComponent } from './recommendation-screen/recommend
     SignupComponent,
     FinalStockListComponent,
     BackgroundComponent,
-    RecommendationScreenComponent
+    RecommendationScreenComponent,
+    ExistingRecommendationComponent
   ],
   imports: [
     BrowserModule,
