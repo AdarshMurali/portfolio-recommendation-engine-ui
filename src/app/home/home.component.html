@@ -5,16 +5,23 @@
       <div id="left-panel" class="col-md-5">
         <form id="input-form" [formGroup]="inputForm" (ngSubmit)="onSubmit()">
 
-          <div class="form-group">
-            <label>Investment Amount</label>
-            <input type="text" formControlName="investmentAmount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.investmentAmount.errors }" />
-            <!-- <div *ngIf="submitted && f.investmentAmount.errors" class="invalid-feedback">
-                <div *ngIf="f.investmentAmount.errors.required">Investment Amount is required</div>
-            </div> -->
-            <div *ngIf="(f.investmentAmount.invalid && f.investmentAmount.touched) || f.investmentAmount.dirty">
-              <small *ngIf="f.investmentAmount.errors?.required" class="text-danger">Investment Amount is required</small>
-          </div>
+        <div class="form-group">
+              <label>Investment Amount</label>
+              <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="text"  formControlName="investmentAmount" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <div class="input-group-append">
+                    <span class="input-group-text">.00</span>
+                  </div>
+              </div>
+                <div *ngIf="(f.investmentAmount.invalid && f.investmentAmount.touched) || f.investmentAmount.dirty">
+                  <small *ngIf="f.investmentAmount.errors?.required" class="text-danger">Investment Amount is required</small>
+              </div>
         </div>
+
+
         <div class="form-group">
           <label>Investment Duration</label>
           <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
@@ -64,8 +71,8 @@
       </div>
   </div>
   <!-- <div class="bg"></div> -->
-  <div id="bottom">
+  <!-- <div id="bottom">
 
-  </div>
+  </div> -->
 </div>
 
