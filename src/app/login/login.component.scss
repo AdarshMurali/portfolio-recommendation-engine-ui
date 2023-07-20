@@ -88,3 +88,17 @@
         }
     }
 }
+
+
+/*working only in ipad portrait device*/
+@media only screen and (width: 768px) and (height: 1024px) and (orientation:portrait) {
+    body{
+      
+    }  
+  }
+  /*working only in ipad landscape device*/
+  @media all and (width: 1024px) and (height: 768px) and (orientation:landscape){
+    body{
+      
+    }   
+  }
