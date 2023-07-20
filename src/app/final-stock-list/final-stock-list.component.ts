@@ -38,7 +38,8 @@ export class FinalStockListComponent implements OnInit {
     this.router.navigateByUrl('/recommendation');
   }
   buyStocks(){
-      alert('Successfully purchased');
+      alert('Executed successfully');
+      this.router.navigateByUrl('/existingPortfolio');
   }
 
 }
