@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
 
     onSubmit(){
     
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/account');
       
       this.submitted = true;
   

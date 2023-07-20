@@ -31,7 +31,7 @@ import { ExistingRecommendationComponent } from './existing-recommendation/exist
     SignupComponent,
     FinalStockListComponent,
     BackgroundComponent,
-    AccountDetailsComponent
+    AccountDetailsComponent,
     RecommendationScreenComponent,
     ExistingRecommendationComponent
   ],

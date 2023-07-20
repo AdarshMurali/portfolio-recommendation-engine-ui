@@ -24,6 +24,7 @@ export class AccountDetailsComponent implements OnInit {
   get f() { return this.inputForm.controls; }
 
   onSubmit(){
+    this.router.navigateByUrl('/home');
     this.submitted = true;
 
     // stop here if form is invalid
