@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockDetails } from '../models/StockDetails';
 import { DataService } from '../services/data.service';
+import { ColDef } from 'ag-grid-community';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,12 +24,21 @@ export class FinalStockListComponent implements OnInit {
       result.forEach((res : any) => 
         this.FinalStocks.push(res)
         )
+      this.rowData = this.FinalStocks
     });
 
 
 
   }
-  test = ["1", "2", "3"]
+  columnDefs: ColDef[] = [
+    {field: "isSelected", headerName: ""},
+    {field: "Symbol", headerName: "Symbol"},
+    {field: "AssetName", headerName: "AssetName"},
+    {field: "StockName", headerName: "StockName"},
+  ]
+  
+  rowData: StockDetails[] = []
+
   ngOnInit(): void {
     this.getFinalStocks();
     console.log(this.FinalStocks)
@@ -38,7 +48,8 @@ export class FinalStockListComponent implements OnInit {
     this.router.navigateByUrl('/recommendation');
   }
   buyStocks(){
-      alert('Successfully purchased');
+      alert('Executed successfully');
+      this.router.navigateByUrl('/existingPortfolio');
   }
 
 }

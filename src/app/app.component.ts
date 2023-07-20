@@ -9,6 +9,7 @@ import { Router, NavigationStart } from '@angular/router';
 export class AppComponent {
   title = 'HelloWorld';
   public showHeaderFooter : boolean = false;
+  public showExisitngPortfolioLabel : boolean = true;
 
   constructor(private router: Router) {
     // on route change to '/login', set the variable showHead to false
@@ -20,6 +21,9 @@ export class AppComponent {
             // console.log("NU")
             this.showHeaderFooter = true;
           }
+          if (event['url'] == '/existingPortfolio') {
+            this.showExisitngPortfolioLabel = false;
+          } 
         }
       });
     }

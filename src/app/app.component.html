@@ -1,5 +1,5 @@
 <!-- <div id="app-nav">
 </div> -->
-<app-header *ngIf="showHeaderFooter"></app-header>
+<app-header *ngIf="showHeaderFooter" [inputFromParent] = "showExisitngPortfolioLabel"></app-header>
 <router-outlet></router-outlet>
 <app-footer *ngIf="showHeaderFooter"></app-footer>
