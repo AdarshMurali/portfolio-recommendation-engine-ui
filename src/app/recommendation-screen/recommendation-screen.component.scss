@@ -2,7 +2,9 @@
     height: 80vh;
     padding: 100px 100px;
     #recommendation-screen-grid{
-        border: 1px solid;
+        border-radius: 15px;
+        padding: 40px;
+        border: 2px solid rgba(0, 0, 0, 0.08);
         height: 500px;
         .primary-blue-button{
             
