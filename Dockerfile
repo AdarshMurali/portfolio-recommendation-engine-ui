@@ -1,7 +1,6 @@
 # https://wkrzywiec.medium.com/build-and-run-angular-application-in-a-docker-container-b65dbbc50be8
 ### STAGE 1: Build ###
 FROM node:12.14-alpine AS build
-RUN apt-get update && apt-get install -y iputils-ping
 WORKDIR /usr/src/app
 COPY package.json package-lock.json ./
 RUN npm install
@@ -9,6 +8,5 @@ COPY . .
 RUN npm run build
 ### STAGE 2: Run ###
 FROM nginx:1.17.1-alpine
-RUN apt-get update && apt-get install -y iputils-ping
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /usr/src/app/dist/HelloWorld /usr/share/nginx/html
