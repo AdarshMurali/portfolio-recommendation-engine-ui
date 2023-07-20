@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { FinalStockListComponent } from './final-stock-list/final-stock-list.component';
 import { BackgroundComponent } from './background/background.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BackgroundComponent } from './background/background.component';
     LoginComponent,
     SignupComponent,
     FinalStockListComponent,
-    BackgroundComponent
+    BackgroundComponent,
+    AccountDetailsComponent
   ],
   imports: [
     BrowserModule,
