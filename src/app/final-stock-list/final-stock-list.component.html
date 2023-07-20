@@ -1,5 +1,5 @@
 <div>
-    <app-background></app-background>
+    <!-- <app-background></app-background> -->
     <div id="middle"> 
         <h3 id="center">STOCK CMP QUANTITY AMOUNT NOW:</h3>
         <div id="left-panel">
@@ -14,9 +14,13 @@
                     {{stock.StockName}}
                 </div>
             </div>
+            <div>
+                <button type="submit" class="primary-blue-button-back" (click)="goToRecommendationPage()">Previous</button>
+                <button type="submit" class="primary-blue-button" (click)="buyStocks()">Execute Order</button>
+            </div>
         </div>
-        <button type="submit" class="primary-button red">Back</button>
-        <button type="submit" class="primary-button blue">Buy</button>
+
+
     </div>
     <!-- <div class="bg"></div> -->
     <div id="bottom">

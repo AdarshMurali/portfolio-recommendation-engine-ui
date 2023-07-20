@@ -13,6 +13,8 @@ import { PortfolioRecomService } from '../portfolio-recom.service';
 export class LoginComponent implements OnInit {
 
   public submitted : boolean = false;
+  public showErrorMessage : boolean = false;
+  public errorMessage : string = '';
 
   inputForm : FormGroup = this.formBuilder.group({
     email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
@@ -29,6 +31,11 @@ export class LoginComponent implements OnInit {
       get f() { return this.inputForm.controls; }
 
       onSubmit(){
+
+        this.router.navigateByUrl('/home');
+        
+        this.showErrorMessage = false;
+        
         this.submitted = true;
     
         // stop here if form is invalid
@@ -49,11 +56,18 @@ export class LoginComponent implements OnInit {
             this.portfolioRecomService.setUser(data.user);
              this.router.navigateByUrl('/home');
            }else{
-             console.log('raise error');
+            this.showErrorMessage = true;
+            this.errorMessage = 'You have entered an invalid password';
+            //show popup - authentication error - password doesnot match
            }
        },
        error => {
            console.error('There was an error!', error);
+           if(error.error.status == 404){
+            this.showErrorMessage = true;
+            this.errorMessage = 'User is not found, please signup';
+            //show popup - error.error.message
+           }
        });
       }
 

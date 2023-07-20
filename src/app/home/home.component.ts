@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { PortfolioRecomService } from '../portfolio-recom.service';
 import { User } from '../shared/models/user';
 import { ColDef } from 'ag-grid-community';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   loggedInUser! : User ;
   inputForm! : FormGroup;
 
-  constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService) { }
+  constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService, private router: Router) { }
 
   ngOnInit(): void {
     this.setForm();
@@ -30,8 +31,8 @@ export class HomeComponent implements OnInit {
       investmentAmount : ['', Validators.required],
       age: ['', Validators.required],
       investmentSector : ['', [Validators.required]],
-      marketCapitalization : ['', Validators.required],
-      portfolioRateOfReturn : ['', Validators.required]
+      portfolioRateOfReturn : ['', Validators.required],
+      portfolioName : ['', Validators.required],
   });
   }
 
@@ -62,6 +63,9 @@ export class HomeComponent implements OnInit {
   get f() { return this.inputForm.controls; }
 
   onSubmit(){
+
+    this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
+
     this.submitted = true;
     // stop here if form is invalid
     if (this.inputForm.invalid) {
@@ -72,8 +76,8 @@ export class HomeComponent implements OnInit {
           investmentAmount : this.inputForm.controls.investmentAmount.value,
           age : this.inputForm.controls.age.value,
           investmentSector : this.inputForm.controls.investmentSector.value,
-          marketCapitalization : this.inputForm.controls.marketCapitalization.value,
           portfolioRateOfReturn : this.inputForm.controls.portfolioRateOfReturn.value,
+          portfolioName : this.inputForm.controls.portfolioName.value,
           userId : this.loggedInUser.userid,
           // userId : 3,
     }

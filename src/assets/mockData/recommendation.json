@@ -1,0 +1,34 @@
+{
+    "recommendedSecurities": [
+        {
+            "tickerSymbol": "MMM",
+            "security": "3M Company",
+            "secFilings": "reports",
+            "gicsSector": "Industrials",
+            "gicsSubIndustry": "Industrial Conglomerates",
+            "dateFirstAdded": "",
+            "addressOfHeadQuarters": "St. Paul, Minnesota",
+            "cik": "66740"
+        },
+        {
+            "tickerSymbol": "MMM",
+            "security": "3M Company",
+            "secFilings": "reports",
+            "gicsSector": "Industrials",
+            "gicsSubIndustry": "Industrial Conglomerates",
+            "dateFirstAdded": "",
+            "addressOfHeadQuarters": "St. Paul, Minnesota",
+            "cik": "66740"
+        },
+        {
+            "tickerSymbol": "MMM",
+            "security": "3M Company",
+            "secFilings": "reports",
+            "gicsSector": "Industrials",
+            "gicsSubIndustry": "Industrial Conglomerates",
+            "dateFirstAdded": "",
+            "addressOfHeadQuarters": "St. Paul, Minnesota",
+            "cik": "66740"
+        }
+    ]
+}
