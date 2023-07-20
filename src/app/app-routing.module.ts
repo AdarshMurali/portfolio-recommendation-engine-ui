@@ -15,7 +15,7 @@ const routes: Routes = [
   { path:  'signup', component:  SignupComponent},
   { path:  'home', component:  HomeComponent},
   { path:  'finalList', component:  FinalStockListComponent},
-  { path:  'account', component:  AccountDetailsComponent}
+  { path:  'account', component:  AccountDetailsComponent},
   { path:  'finallist', component:  FinalStockListComponent},
   { path:  'recommendation', component:  RecommendationScreenComponent},
   { path:  'existingPortfolio', component:  ExistingRecommendationComponent}
