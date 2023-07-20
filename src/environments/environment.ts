@@ -2,12 +2,17 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-declare var $ENV: any;
 
 export const environment = {
   production: false,
+  backendUrl : "http://backend:8080/"
+  // backendUrl: $ENV.API_URL || "http://localhost:8080"
   // backendUrl: process.env.API_URL || "http://localhost:8080"
 };
+
+interface Env {
+  API_URL: string
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
