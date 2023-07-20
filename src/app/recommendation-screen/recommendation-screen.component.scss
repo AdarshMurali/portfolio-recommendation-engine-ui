@@ -1,6 +1,11 @@
 #recommendation-screen {
+    height: 80vh;
+    padding: 100px 100px;
     #recommendation-screen-grid{
+        border: 1px solid;
+        height: 500px;
         .primary-blue-button{
+            
             padding: 10px 20px;
             line-height: 20px;
             font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
