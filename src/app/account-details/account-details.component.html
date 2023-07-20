@@ -3,23 +3,30 @@
     <div id="middle"> 
         <div id="left-panel">
             <h3 id="form-heading">Account Details</h3>
-            <div style="margin-left: 5rem;">
+            <div id="input-wrapper" style="margin-left: 5rem;">
                 <form [formGroup]="inputForm">
-                    <div class="form-group" style="margin-top:1rem;">
+                    <div class="form-group" class="accounts-inputs">
                         <label>Address line 1</label>
                         <input type="text" formControlName="name" maxlength="20" class="form-control" onkeydown="return /[a-z]/i.test(event.key)"  [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
                         <div *ngIf="(f.name.invalid && f.name.touched) || f.name.dirty">
                             <small *ngIf="f.name.errors?.required" class="text-danger">Name is required</small>
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top:1rem;">
+                    <div class="form-group" class="accounts-inputs">
                         <label>Address line 2</label>
                         <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }"/>
                         <div *ngIf="(f.age.invalid && f.age.touched) || f.age.dirty">
                             <small *ngIf="f.age.errors?.required" class="text-danger">Age is required</small>
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top:1rem;">
+                    <div class="form-group" class="accounts-inputs">
+                        <label>Mobile</label>
+                        <input type="text" formControlName="income" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
+                        <div *ngIf="(f.income.invalid && f.income.touched) || f.income.dirty">
+                            <small *ngIf="f.income.errors?.required" class="text-danger">Income is required</small>
+                        </div>
+                    </div>
+                    <div class="form-group" class="accounts-inputs">
                         <label>City</label>
                         <input type="text" formControlName="email" maxlength="30" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
                         pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
@@ -29,14 +36,14 @@
                             <small *ngIf="f.email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top:1rem;">
+                    <div class="form-group" class="accounts-inputs">
                         <label>State/Province</label>
                         <input type="text" formControlName="income" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
                         <div *ngIf="(f.income.invalid && f.income.touched) || f.income.dirty">
                             <small *ngIf="f.income.errors?.required" class="text-danger">Income is required</small>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" class="accounts-inputs">
                         <label for="exampleFormControlSelect1">Country</label>
                         <select class="form-control" id="exampleFormControlSelect1">
                           <option>1</option>
@@ -50,7 +57,7 @@
             </div>
         </div>
         
-        <button type="submit" (click)="onSubmit()" class="primary-button blue" style="margin-top:1rem">Save</button>
-        <button type="submit" (click)="onClear()" class="primary-button red" style="margin-top:1rem">Clear</button>
+        <button type="submit" (click)="onSubmit()" class="primary-button blue" >Save</button>
+        <button type="submit" (click)="onClear()" class="primary-button red" >Clear</button>
     </div>
 </div>

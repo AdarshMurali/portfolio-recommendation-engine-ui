@@ -8,16 +8,20 @@
     border: 2px solid rgba(0, 0, 0, 0.08);
         #left-panel{
             padding: 4rem;
-            #inline-details{
-                display: inline-block;
-                margin: 0 2rem 2rem 2rem;
-            }
             #form-heading{
                 font-size: 40px;
                 text-align: center;
                 font-family: 'OpenSans-Regular';
             }
-            
+            #input-wrapper{
+                #inline-details{
+                    display: inline-block;
+                    margin: 0 2rem 2rem 2rem;
+                }
+                .accounts-inputs{
+                    margin-top: 10px;
+                }
+            }
         }
         .primary-button{
             position: relative;
