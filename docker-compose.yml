@@ -1,8 +1,13 @@
+version: '3.9'
+
 services:
-  portfolio:
-    image: adarshmurali/aadya_nginx:8 # this will use the latest version of 1.23
+  frontend:
+    image: adarshmurali/aadya_nginx:33
+    environment:
+      API_URL: http://backend:8080
     ports:
-      # NOTE: if port 80 is already in use on your host, this won't work
-      # in that case, change to any high port, like '8000:80'
-      # and then use http://localhost:8000 to access the proxy
-      - '80:80' # expose 80 on host and sent to 80 in container
+      - '80:80'
+  backend:
+    image: adarshmurali/adarsh_nginx:23
+    ports:
+      - '8080:8080'
