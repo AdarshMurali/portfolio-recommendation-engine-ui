@@ -1,23 +1,76 @@
 <div id="existing-portfolio">
-  <!-- <app-background></app-background> -->
-    <div class="row">
-        <div class="card" style="width: 18rem; margin-right: 20px; ">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <h5 class="card-title">Portfolio - Risk</h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a routerLink='/recommendation' class="btn btn-primary">See Details</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem">
-            <!-- <img src="..." class="card-img-top" alt="..."> -->
-            <div class="card-body">
-              <h5 class="card-title">Portfolio - Growth </h5>
-              <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-              <a routerLink='/recommendation' class="btn btn-primary">See Details</a>
-            </div>
-          </div>
+  <div id="top">
+    <div id="header">
+      <section class="content-wrapper-header d-inline-flex align-items-center mb-0">
+      <h1 class="ml-4 mb-0 calc-title">Your personal Portfolio Manager</h1>
+      </section>
+      <div class="list-section">
+        <p>
+            <i class="fa-sharp fa-solid fa-check fa-beat font-icon-style" style="color: #3acf44;"></i>Hassle-free & automated transaction imports 
+        </p>
+        <p>
+            <i class="fa-sharp fa-solid fa-check fa-beat font-icon-style" style="color: #3acf44;"></i>Powerful performance analytics and comparisons
+        </p>
+        <p>
+            <i class="fa-sharp fa-solid fa-check fa-beat font-icon-style" style="color: #3acf44;"></i>Detailed & ready to file tax statement
+        </p>
+        <p>
+            <i class="fa-sharp fa-solid fa-check fa-beat font-icon-style" style="color: #3acf44;"></i>Automated capturing of all dividends, bonuses, rights, and splits
+        </p>
+        <p>
+            <i class="fa-sharp fa-solid fa-check fa-beat font-icon-style" style="color: #3acf44;"></i>Manage and track your and your family's investments in one place
+        </p>
+      </div>
+      <p class="more vr-para-tools p--section-desc mb0" id="show-more-less">
+      <span class="text-truncated">
+        This undoubtedly makes it India’s best portfolio management system. Experience the magic yourself!
+      </span>
+      </p>                                    
     </div>
+</div>
 
+  <div id="go-to-recomendation">
+    <div class="text-center">
+      New stock recommendation releases today - A unique play on the real estate boom
+      <button type="submit" class="primary-button" (click)="goToRecomendation()">Recommendation</button>
+    </div>
+  </div>
+  <div id="middle">
+    <h1>Investment Details</h1>
+    <div class="row" id="investment-details">
+        <div class="col-md-5">
+            <div class="details">
+              <p class="key">CURRENT VALUE</p>
+              <h3 class="value">3.63 Lakh</h3>
+            </div>
+        </div>
+        <div class="col-md-5">
+          <div class="details">
+            <p class="key">CURRENT VALUE</p>
+            <h3 class="value">3.63 Lakh</h3>
+          </div>
+      </div>
+    </div>
+  </div>
 
+<div id="bottom">
+    <div class="row">
+      <div class="card" style="width: 18rem; margin-right: 20px; ">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h5 class="card-title">Portfolio - Risk</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <a routerLink='/recommendation' class="btn btn-primary">See Details</a>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <h5 class="card-title">Portfolio - Growth </h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <a routerLink='/recommendation' class="btn btn-primary">See Details</a>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>

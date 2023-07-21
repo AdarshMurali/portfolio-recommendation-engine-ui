@@ -12,4 +12,8 @@ export class ExistingRecommendationComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  goToRecomendation(){
+
+  }
+
 }

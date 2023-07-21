@@ -1,4 +1,76 @@
 #existing-portfolio{
-    height: 80vh;
-    padding: 50px;
+    background-color: #fef1e8;
+    #top{
+        height: auto;
+        background-color: #fbc6a6;
+        padding : 50px 0;
+        #header {
+            width: 65%;
+            margin: 0 auto;
+            margin-top: 20px;
+
+            .calc-title {
+                font-family: "Cooper-IT-BT",Arial,Helvetica,sans-serif;
+                font-size: 40px;
+                font-weight: 400;
+                color: #000;
+            }
+            .list-section{
+                margin-top: 30px;
+                p{
+                    line-height: 0.7;
+                    .font-icon-style{
+                        margin-right: 10px;
+                    }
+                    .text-truncated{
+                        font-family: "IBM-Plex-Sans",Arial,Helvetica,sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #000;
+                        line-height: 150%;
+                    }
+                }
+            }
+        }
+    }
+    #go-to-recomendation{
+        padding: 10px;
+        background-color: #f5d359;
+        .primary-button{
+            margin-left: 10px;
+            padding: 10px 20px;
+            line-height: 20px;
+            font-size: 12PX;
+            font-weight: 600;
+            color: #fff;
+            background-color: #1c4da0;
+            cursor: pointer;
+            transition: 0.1s linear;
+            border-radius: 5px;
+            border: 0.1rem solid #1c4da0;
+            &:hover  {
+                transition: .1s linear;
+            }
+        }
+    }
+    #middle{
+        background-color: white;
+        padding: 50px 18%;
+        #investment-details{
+            .details{
+                .key{
+                    margin-bottom: -6px;
+                    font-size: 10px;
+                    font-weight: 600;
+                    color: rgba(0,0,0,.6);
+                }
+                .value{
+
+                }
+            }
+        }
+    }
+    #bottom{
+        padding: 20px 18%;
+    }
 }
