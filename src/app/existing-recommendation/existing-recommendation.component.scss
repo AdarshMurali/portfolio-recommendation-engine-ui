@@ -74,6 +74,7 @@
         padding: 20px 18%;
         #existing-goals {
             .circles {
+                
                 border: 1px solid;
                 border-radius: 10px;
                 margin-bottom: 20px;
@@ -82,45 +83,44 @@
                     font-weight: 300;
                     font-size: 13px
                 }
-            }             
-            .primary-button-rebalance{
-                padding: 10px 20px;
-                line-height: 20px;
-                font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
-                font-size: 12PX;
-                font-weight: 600;
-                color: #fff;
-                background-color: #1c4da0;
-                cursor: pointer;
-                transition: 0.1s linear;
-                border-radius: 5px;
-                border: 0.1rem solid #1c4da0;
-                &:hover  {
-                    transition: .1s linear;
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                    background-color: #eee;
+                    border-radius: 15px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 39px
+                }  
+                .primary-button-rebalance{
+                    padding: 10px 20px;
+                    line-height: 20px;
+                    font-family: "IBM-Plex-Sans-SemiBold", Arial, Helvetica, sans-serif;
+                    font-size: 12PX;
+                    font-weight: 600;
+                    color: #fff;
+                    background-color: #1c4da0;
+                    cursor: pointer;
+                    transition: 0.1s linear;
+                    border-radius: 5px;
+                    border: 0.1rem solid #1c4da0;
+                    &:hover  {
+                        transition: .1s linear;
+                    }
+                }  
+                .progress div {
+                    background-color: red
                 }
-            }
-            .icon {
-                width: 50px;
-                height: 50px;
-                background-color: #eee;
-                border-radius: 15px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                font-size: 39px
-            }            
-            .progress div {
-                background-color: red
-            }
-            
-            .text1 {
-                font-size: 14px;
-                font-weight: 600
-            }
-            
-            .text2 {
-                color: #a5aec0
-            }
+                
+                .text1 {
+                    font-size: 14px;
+                    font-weight: 600;
+                    .text2 {
+                        color: #a5aec0
+                    }
+                }
+            }                   
         }
     }
 }
