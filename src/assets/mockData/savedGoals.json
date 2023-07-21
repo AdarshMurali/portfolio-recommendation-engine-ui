@@ -1,0 +1,15 @@
+{
+    "exisitngPortfolios" : [
+        {
+            "portfolioName" : "RiskTaker",
+            "createdAt" : "2023-03-12",
+            "totalInvestment" : "129743"
+        },
+        {
+            "portfolioName" : "RiskTaker",
+            "createdAt" : "2023-03-12",
+            "totalInvestment" : "129743"
+        }
+
+    ]
+}

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-existing-recommendation',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExistingRecommendationComponent implements OnInit {
 
-  constructor() { }
+  public goals : any[] = [];
+  constructor(private dataService : DataService) { }
 
   ngOnInit(): void {
+    this.getSavedGoals();
+  }
+
+  getSavedGoals(){
+    this.dataService.getMock('assets/mockData/savedGoals.json').subscribe((data : any) => {
+        this.goals = data['exisitngPortfolios'];
+    });
+
+
   }
 
   goToRecomendation(){

@@ -54,23 +54,46 @@
   </div>
 
 <div id="bottom">
-    <div class="row">
-      <div class="card" style="width: 18rem; margin-right: 20px; ">
-          <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div id="existing-goals" class="row">
+      <div>
+        <div class="card p-3 mb-2" class="circles" *ngFor='let goal of goals; let i = index'>
+          <div class="d-flex justify-content-between">
+              <div class="d-flex flex-row align-items-center">
+                  <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
+                  <div class="ms-2 c-details">
+                    <h6 class="mb-0">Created</h6> <span>{{goal.createdAt}}</span>
+                  </div>
+              </div>
+              <button type="button" class="primary-button-rebalance" >ReBalance</button>
+          </div>
+          <div class="mt-5">
+            <h3 class="heading">{{goal.portfolioName}}<br></h3>
+              <div class="mt-5">
+                  <div class="progress">
+                      <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="mt-3"> <span class="text1">32 Applied <span class="text2">of 50 capacity</span></span> </div>
+              </div>
+          </div>
+      </div>
+      </div>
+
+      <!-- <div class="card" style="width: 18rem; margin-right: 20px; ">
+          <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Portfolio - Risk</h5>
-            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <a routerLink='/recommendation' class="btn btn-primary">See Details</a>
           </div>
         </div>
         <div class="card" style="width: 18rem">
-          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <img src="..." class="card-img-top" alt="...">
           <div class="card-body">
             <h5 class="card-title">Portfolio - Growth </h5>
-            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             <a routerLink='/recommendation' class="btn btn-primary">See Details</a>
           </div>
         </div>
-      </div>
+      </div> -->
   </div>
 </div>
