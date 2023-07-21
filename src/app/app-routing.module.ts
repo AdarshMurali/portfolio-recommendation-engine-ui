@@ -8,17 +8,19 @@ import { FinalStockListComponent } from './final-stock-list/final-stock-list.com
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { RecommendationScreenComponent } from './recommendation-screen/recommendation-screen.component';
 import { ExistingRecommendationComponent } from './existing-recommendation/existing-recommendation.component';
+import { LandingComponent } from './landing/landing.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path:  'login', component:  LoginComponent},
   { path:  'signup', component:  SignupComponent},
-  { path:  'home', component:  HomeComponent},
+  { path:  'clientPreference', component:  HomeComponent},
   { path:  'finalList', component:  FinalStockListComponent},
   { path:  'account', component:  AccountDetailsComponent},
   { path:  'finallist', component:  FinalStockListComponent},
   { path:  'recommendation', component:  RecommendationScreenComponent},
-  { path:  'existingPortfolio', component:  ExistingRecommendationComponent}
+  { path:  'existingPortfolio', component:  ExistingRecommendationComponent},
+  { path:  'home', component:  LandingComponent}
 ];
 
 @NgModule({

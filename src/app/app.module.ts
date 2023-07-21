@@ -19,6 +19,7 @@ import { BackgroundComponent } from './background/background.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { RecommendationScreenComponent } from './recommendation-screen/recommendation-screen.component';
 import { ExistingRecommendationComponent } from './existing-recommendation/existing-recommendation.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ExistingRecommendationComponent } from './existing-recommendation/exist
     BackgroundComponent,
     AccountDetailsComponent,
     RecommendationScreenComponent,
-    ExistingRecommendationComponent
+    ExistingRecommendationComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
