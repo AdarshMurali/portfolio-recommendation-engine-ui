@@ -17,7 +17,7 @@ export class ExistingRecommendationComponent implements OnInit {
   }
 
   getSavedGoals(){
-    this.dataService.getMock('assets/mockData/savedGoals.json').subscribe((data : any) => {
+    this.dataService.getMock('assets/mockData/exisitngPortfolioData.json').subscribe((data : any) => {
         this.goals = data['exisitngPortfolios'];
     });
 
