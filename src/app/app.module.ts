@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from "@angular/common";
+import { CommonModule, CurrencyPipe } from "@angular/common";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,7 @@ import { BackgroundComponent } from './background/background.component';
 import { AccountDetailsComponent } from './account-details/account-details.component';
 import { RecommendationScreenComponent } from './recommendation-screen/recommendation-screen.component';
 import { ExistingRecommendationComponent } from './existing-recommendation/existing-recommendation.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ExistingRecommendationComponent } from './existing-recommendation/exist
     BackgroundComponent,
     AccountDetailsComponent,
     RecommendationScreenComponent,
-    ExistingRecommendationComponent
+    ExistingRecommendationComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +47,7 @@ import { ExistingRecommendationComponent } from './existing-recommendation/exist
     CommonModule,
     AgGridModule
   ],
-  providers: [],
+  providers: [CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

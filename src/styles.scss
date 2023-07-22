@@ -10,6 +10,8 @@ body {
   padding: 0;
   height: 100%;
   font-family: "OpenSans-Regular" Roboto, "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+    width: 100%;
 }
 
 /* use viewport-relative units to cover page fully */
