@@ -61,7 +61,8 @@
                 transition: 0.1s linear;
                 border-radius: 5px;
                 &:hover  {
-                    transition: .1s linear;
+                    background-color: transparent;
+                    color: #1c4da0;
                 }
             }
             .red{
