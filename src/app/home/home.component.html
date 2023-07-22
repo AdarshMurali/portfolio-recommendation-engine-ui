@@ -8,13 +8,21 @@
         <div class="form-group">
               <label>Investment Amount</label>
               <div class="input-group mb-3">
-                  <div class="input-group-prepend">
+                  <!-- <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
-                  </div>
-                  <input type="text" maxlength="10" formControlName="investmentAmount" class="form-control" aria-label="Amount (to the nearest dollar)">
-                  <div class="input-group-append">
+                  </div> -->
+                  <input type="text" maxlength="10"
+                  
+                  onkeydown="return ( event.ctrlKey || event.altKey 
+                    || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
+                    || (95<event.keyCode && event.keyCode<106)
+                    || (event.keyCode==8) || (event.keyCode==9) 
+                    || (event.keyCode>34 && event.keyCode<40) 
+                    || (event.keyCode==46) )"
+                  (blur)="transformAmount($event)" formControlName="investmentAmount" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <!-- <div class="input-group-append">
                     <span class="input-group-text">.00</span>
-                  </div>
+                  </div> -->
               </div>
                 <div *ngIf="(f.investmentAmount.invalid && f.investmentAmount.touched) || f.investmentAmount.dirty">
                   <small *ngIf="f.investmentAmount.errors?.required" class="text-danger">Investment Amount is required</small>

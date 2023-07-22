@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../services/data.service';
+import { CommonModule, CurrencyPipe} from '@angular/common';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { PortfolioRecomService } from '../portfolio-recom.service';
 import { User } from '../shared/models/user';
@@ -18,7 +19,8 @@ export class HomeComponent implements OnInit {
   loggedInUser! : User ;
   inputForm! : FormGroup;
 
-  constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService, private router: Router) { }
+  constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService, private router: Router,
+    private currencyPipe : CurrencyPipe) { }
 
   ngOnInit(): void {
     this.setForm();
@@ -29,7 +31,7 @@ export class HomeComponent implements OnInit {
     console.log('calling setform');
     this.inputForm  = this.formBuilder.group({
       investmentAmount : ['', Validators.required],
-      investmentDuration: ['', Validators.required ],
+      investmentDuration: ['3', Validators.required ],
       investmentSector : ['', [Validators.required]],
       volatility : ['', Validators.required],
       portfolioName : ['', Validators.required],
@@ -42,6 +44,14 @@ export class HomeComponent implements OnInit {
     this.inputForm.markAsUntouched
     this.setForm();
   }
+
+  
+  transformAmount(element : any){
+    element.target.value = this.currencyPipe.transform(this.inputForm.controls.investmentAmount.value, '$');
+
+    // element.target.value = this.inputForm.controls.investmentAmount.value;
+  }
+
 
   columnDefs: ColDef[] = [
     { field: 'make' },
