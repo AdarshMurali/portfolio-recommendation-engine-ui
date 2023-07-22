@@ -48,6 +48,6 @@ export class RecommendationScreenComponent implements OnInit {
     
 
     goToFinalStockList(){
-      this.router.navigateByUrl('/finallist');
+      this.router.navigateByUrl('/finalList');
     }
 }

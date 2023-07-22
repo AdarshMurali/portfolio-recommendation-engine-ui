@@ -1,50 +1,82 @@
 <div id="signup-warpper">
-    <app-background></app-background>
+    <div id="top">
+        <div id="header">
+          <section class="content-wrapper-header d-inline-flex align-items-center mb-0">
+          <h1 class="ml-4 mb-0 calc-title">My Addresses</h1>
+          </section>
+          <p class="more vr-para-tools p--section-desc mb0" id="show-more-less">
+          <span class="text-truncated">
+            You have not added any address. Please enter your address by clicking on the 'Add Address' button. This address will be used for your billing and delivery purposes.
+          </span>
+          </p>                                    
+        </div>
+    </div>
     <div id="middle"> 
         <div id="left-panel">
-            <h3 style="margin-left: 5rem;">ACCOUNT DETAILS:</h3>
-            <div style="margin-left: 5rem;">
+            <h3 id="form-heading">Account Details</h3>
+            <div id="input-wrapper" style="margin-left: 5rem;">
                 <form [formGroup]="inputForm">
-                    <div class="form-group" style="margin-top:1rem;">
-                        <label>Name</label>
-                        <input type="text" formControlName="name" maxlength="20" class="form-control" onkeydown="return /[a-z]/i.test(event.key)"  [ngClass]="{ 'is-invalid': submitted && f.name.errors }"/>
-                        <div *ngIf="(f.name.invalid && f.name.touched) || f.name.dirty">
-                            <small *ngIf="f.name.errors?.required" class="text-danger">Name is required</small>
+                    <div class="form-group" class="accounts-inputs">
+                        <label>Address line 1</label>
+                        <input type="text" formControlName="address1" maxlength="200" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address1.errors }"/>
+                        <div *ngIf="(f.address1.invalid && f.address1.touched) || f.address1.dirty">
+                            <small *ngIf="f.address1.errors?.required" class="text-danger">Address line 1 is required</small>
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top:1rem;">
-                        <label>Age</label>
-                        <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }"/>
-                        <div *ngIf="(f.age.invalid && f.age.touched) || f.age.dirty">
-                            <small *ngIf="f.age.errors?.required" class="text-danger">Age is required</small>
+                    <div class="form-group" class="accounts-inputs">
+                        <label>Address line 2</label>
+                        <input type="text" formControlName="address2" maxlength="200" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address2.errors }"/>
+                        <div *ngIf="(f.address2.invalid && f.address2.touched) || f.address2.dirty">
+                            <small *ngIf="f.address2.errors?.required" class="text-danger">Address line 2 is required</small>
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top:1rem;">
-                        <label>Email</label>
-                        <input type="text" formControlName="email" maxlength="30" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" 
-                        pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-                        />
-                        <div *ngIf="(f.email.invalid && f.email.touched) || f.email.dirty">
-                            <small *ngIf="f.email.errors?.required" class="text-danger">Email is required</small>
-                            <small *ngIf="f.email.errors?.pattern" class="text-danger">Please provide a valid email address</small>
+                    <div class="form-group" class="accounts-inputs">
+                        <label>Mobile</label>
+                        <input type="text" formControlName="mobile" maxlength="15" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }"/>
+                        <div *ngIf="(f.mobile.invalid && f.mobile.touched) || f.mobile.dirty">
+                            <small *ngIf="f.mobile.errors?.required" class="text-danger">Mobile number is required</small>
                         </div>
                     </div>
-                    <div class="form-group" style="margin-top:1rem;">
-                        <label>Income</label>
-                        <input type="text" formControlName="income" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
-                        <div *ngIf="(f.income.invalid && f.income.touched) || f.income.dirty">
-                            <small *ngIf="f.income.errors?.required" class="text-danger">Income is required</small>
+                    <div class="form-group" class="accounts-inputs">
+                        <label>City</label>
+                        <input type="text" formControlName="city" maxlength="30" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.city.errors }" />
+                        <div *ngIf="(f.city.invalid && f.city.touched) || f.city.dirty">
+                            <small *ngIf="f.city.errors?.required" class="text-danger">City is required</small>
                         </div>
+                    </div>
+                    <div class="form-group" class="accounts-inputs">
+                        <label>Country</label>
+                        <select id="state" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                            <option selected>Choose...</option>
+                            <option>Technology</option>
+                            <option>Energy</option>
+                            <option>Finance</option>
+                          </select>
+                        <div *ngIf="(f.country.invalid && f.country.touched) || f.country.dirty">
+                            <small *ngIf="f.country.errors?.required" class="text-danger">Country is required</small>
+                        </div>
+                    </div>
+                    <div class="form-group" class="accounts-inputs">
+                        <label>State/Province</label>
+                        <select id="state" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
+                            <option selected>Choose...</option>
+                            <option>Technology</option>
+                            <option>Energy</option>
+                            <option>Finance</option>
+                          </select>
+                        <div *ngIf="(f.state.invalid && f.state.touched) || f.state.dirty">
+                            <small *ngIf="f.state.errors?.required" class="text-danger">State is required</small>
+                        </div>
+                    </div>
+                    <div class="button-wrapper">
+                        <button  type="submit" (click)="onSubmit()" class="primary-button blue" >Save</button>
                     </div>
                 </form>
             </div>
         </div>
-        
-        <button type="submit" (click)="onSubmit()" class="primary-button blue" style="margin-top:1rem">Save</button>
-        <button type="submit" (click)="onClear()" class="primary-button red" style="margin-top:1rem">Clear</button>
-    </div>
-    
-    <div id="bottom">
-        
+        <!-- <div> -->
+            <!-- <button style="" type="submit" (click)="onSubmit()" class="primary-button blue" >Save</button> -->
+            <!-- <button type="submit" (click)="onClear()" class="primary-button red" >Clear</button> -->
+        <!-- </div> -->
     </div>
 </div>
