@@ -57,11 +57,15 @@
                             <small *ngIf="f.state.errors?.required" class="text-danger">State is required</small>
                         </div>
                     </div>
+                    <div class="button-wrapper">
+                        <button  type="submit" (click)="onSubmit()" class="primary-button blue" >Save</button>
+                    </div>
                 </form>
             </div>
         </div>
-        
-        <button type="submit" (click)="onSubmit()" class="primary-button blue" >Save</button>
-        <button type="submit" (click)="onClear()" class="primary-button red" >Clear</button>
+        <!-- <div> -->
+            <!-- <button style="" type="submit" (click)="onSubmit()" class="primary-button blue" >Save</button> -->
+            <!-- <button type="submit" (click)="onClear()" class="primary-button red" >Clear</button> -->
+        <!-- </div> -->
     </div>
 </div>

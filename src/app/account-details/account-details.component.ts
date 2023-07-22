@@ -16,9 +16,9 @@ export class AccountDetailsComponent implements OnInit {
     address1: ['', Validators.required, Validators.maxLength(6)],
     address2: [, Validators.required],
     mobile: ['', [Validators.required]],
-    city: [, [Validators.required]],
-    state: [, [Validators.required]],
-    country: [, [Validators.required]]
+    city: ['', [Validators.required]],
+    state: [ '', [Validators.required]],
+    country: [ '', [Validators.required]]
   });
   
   ngOnInit(): void {
@@ -34,11 +34,12 @@ export class AccountDetailsComponent implements OnInit {
     }
 
     var signupRequest = {
-      name : this.inputForm.controls.name.value,
-      lastname : this.inputForm.controls.lastName.value,
-      email : this.inputForm.controls.email.value,
-      age : this.inputForm.controls.age.value,
-      income : this.inputForm.controls.income.value
+      address1 : this.inputForm.controls.address1.value,
+      address2 : this.inputForm.controls.address2.value,
+      mobile : this.inputForm.controls.mobile.value,
+      city : this.inputForm.controls.city.value,
+      state : this.inputForm.controls.state.value,
+      country : this.inputForm.controls.country.value
     }
     console.log(signupRequest);
 
