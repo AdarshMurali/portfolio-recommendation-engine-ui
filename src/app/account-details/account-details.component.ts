@@ -43,6 +43,7 @@ export class AccountDetailsComponent implements OnInit {
     }
     console.log(signupRequest);
 
+    this.router.navigateByUrl('/home');
   }
 
   onClear(){
