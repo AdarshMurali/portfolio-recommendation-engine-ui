@@ -11,7 +11,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input type="text"  formControlName="investmentAmount" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <input type="text" maxlength="10" formControlName="investmentAmount" class="form-control" aria-label="Amount (to the nearest dollar)">
                   <div class="input-group-append">
                     <span class="input-group-text">.00</span>
                   </div>
@@ -21,14 +21,27 @@
               </div>
         </div>
 
-
         <div class="form-group">
-          <label>Investment Duration</label>
-          <input type="text" formControlName="age" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
-          <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
-              <div *ngIf="f.age.errors.required">Age is required</div>
+          <label style="display: block;">Investment Duration (Months)</label> 
+          <div>
+            <label class="radio-inline">
+              <input type="radio" formControlName="investmentDuration" value="3" name="investmentDuration" checked>3
+            </label>
+            <label class="radio-inline">
+              <input type="radio" formControlName="investmentDuration" value="6" name="investmentDuration">6
+            </label>
+            <label class="radio-inline">
+              <input type="radio" formControlName="investmentDuration" value="12" name="investmentDuration">12
+            </label>
+            <label class="radio-inline">
+              <input type="radio" formControlName="investmentDuration" value="24" name="investmentDuration">24
+            </label>
           </div>
-      </div>
+          <div *ngIf="submitted && f.investmentDuration.errors" class="invalid-feedback">
+            <div *ngIf="f.investmentDuration.errors.required">Investment Duration is required</div>
+        </div>
+        </div>
+
         <div class="form-group">
             <label for="investmentSector">Investment Sector</label>
             <select id="investmentSector" formControlName="investmentSector" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.investmentSector.errors }">
@@ -42,16 +55,16 @@
           </div>
         </div>
       <div class="form-group">
-        <label for="portfolioRateOfReturn">Volatility</label>
-        <select id="portfolioRateOfReturn" formControlName="portfolioRateOfReturn" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.portfolioRateOfReturn.errors }">
+        <label for="volatility">Volatility</label>
+        <select id="volatility" formControlName="volatility" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.volatility.errors }">
           <option selected>Choose...</option>
           <option>0 - 25</option>
           <option>25 - 50</option>
           <option>50 - 75</option>
           <option>75 - 100</option>
         </select>
-        <div *ngIf="submitted && f.portfolioRateOfReturn.errors" class="invalid-feedback">
-          <div *ngIf="f.portfolioRateOfReturn.errors.required">Portfolio Rate Of Return is required</div>
+        <div *ngIf="submitted && f.volatility.errors" class="invalid-feedback">
+          <div *ngIf="f.volatility.errors.required">Volatility is required</div>
       </div>
     </div>
       <div class="form-group">

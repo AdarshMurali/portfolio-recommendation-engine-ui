@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
     console.log('calling setform');
     this.inputForm  = this.formBuilder.group({
       investmentAmount : ['', Validators.required],
-      age: ['', Validators.required],
+      investmentDuration: ['', Validators.required ],
       investmentSector : ['', [Validators.required]],
-      portfolioRateOfReturn : ['', Validators.required],
+      volatility : ['', Validators.required],
       portfolioName : ['', Validators.required],
   });
   }
@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
 
-    this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
+    // this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
 
     this.submitted = true;
     // stop here if form is invalid
@@ -74,14 +74,15 @@ export class HomeComponent implements OnInit {
 
     var preferenceRequest = {
           investmentAmount : this.inputForm.controls.investmentAmount.value,
-          age : this.inputForm.controls.age.value,
+          investmentDuration : this.inputForm.controls.investmentDuration.value,
           investmentSector : this.inputForm.controls.investmentSector.value,
-          portfolioRateOfReturn : this.inputForm.controls.portfolioRateOfReturn.value,
+          volatility : this.inputForm.controls.volatility.value,
           portfolioName : this.inputForm.controls.portfolioName.value,
-          userId : this.loggedInUser.userid,
+          // userId : this.loggedInUser.userid,
           // userId : 3,
     }
     console.log(preferenceRequest);
+    return;
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
         if(data.customerPreferenceId){
