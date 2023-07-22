@@ -17,7 +17,6 @@ const routes: Routes = [
   { path:  'clientPreference', component:  HomeComponent},
   { path:  'finalList', component:  FinalStockListComponent},
   { path:  'account', component:  AccountDetailsComponent},
-  { path:  'finallist', component:  FinalStockListComponent},
   { path:  'recommendation', component:  RecommendationScreenComponent},
   { path:  'existingPortfolio', component:  ExistingRecommendationComponent},
   { path:  'home', component:  LandingComponent}

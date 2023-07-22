@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
 
-    // this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
+    this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
 
     this.submitted = true;
     // stop here if form is invalid
@@ -92,7 +92,7 @@ export class HomeComponent implements OnInit {
           // userId : 3,
     }
     console.log(preferenceRequest);
-    return;
+
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
         if(data.customerPreferenceId){
