@@ -13,10 +13,12 @@ export class AccountDetailsComponent implements OnInit {
   public submitted : boolean = false;
 
   inputForm : FormGroup = this.formBuilder.group({
-    name: ['', Validators.required, Validators.maxLength(6)],
-    age: [, Validators.required],
-    email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-    income: [, [Validators.required]]
+    address1: ['', Validators.required, Validators.maxLength(6)],
+    address2: [, Validators.required],
+    mobile: ['', [Validators.required]],
+    city: [, [Validators.required]],
+    state: [, [Validators.required]],
+    country: [, [Validators.required]]
   });
   
   ngOnInit(): void {
@@ -24,7 +26,6 @@ export class AccountDetailsComponent implements OnInit {
   get f() { return this.inputForm.controls; }
 
   onSubmit(){
-    this.router.navigateByUrl('/home');
     this.submitted = true;
 
     // stop here if form is invalid
