@@ -11,6 +11,14 @@
             #input-form{
                 .form-group{
                     margin-bottom: 30px;
+                    #radio-input{
+                        .radio-inline{
+                            margin-right: 20px;
+                            span{
+                                margin-right: 5px;
+                            }
+                        }
+                    }
                 }
                 .primary-blue-button{
                     padding: 10px 20px;

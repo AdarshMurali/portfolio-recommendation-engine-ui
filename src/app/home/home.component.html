@@ -23,18 +23,18 @@
 
         <div class="form-group">
           <label style="display: block;">Investment Duration (Months)</label> 
-          <div>
+          <div id="radio-input">
             <label class="radio-inline">
-              <input type="radio" formControlName="investmentDuration" value="3" name="investmentDuration" checked>3
+              <input type="radio" formControlName="investmentDuration" value="3" name="investmentDuration" checked><span class="value">3</span>
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="investmentDuration" value="6" name="investmentDuration">6
+              <input type="radio" formControlName="investmentDuration" value="6" name="investmentDuration"><span class="value">6</span>
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="investmentDuration" value="12" name="investmentDuration">12
+              <input type="radio" formControlName="investmentDuration" value="12" name="investmentDuration"><span class="value">12</span>
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="investmentDuration" value="24" name="investmentDuration">24
+              <input type="radio" formControlName="investmentDuration" value="24" name="investmentDuration"><span class="value">24</span>
             </label>
           </div>
           <div *ngIf="submitted && f.investmentDuration.errors" class="invalid-feedback">
@@ -58,10 +58,9 @@
         <label for="volatility">Volatility</label>
         <select id="volatility" formControlName="volatility" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.volatility.errors }">
           <option selected>Choose...</option>
-          <option>0 - 25</option>
-          <option>25 - 50</option>
-          <option>50 - 75</option>
-          <option>75 - 100</option>
+          <option>0 - 5 (Low Risk)</option>
+          <option>5 - 15 (Medium Risk)</option>
+          <option>15 - 100 (High Risk)</option>
         </select>
         <div *ngIf="submitted && f.volatility.errors" class="invalid-feedback">
           <div *ngIf="f.volatility.errors.required">Volatility is required</div>
@@ -69,7 +68,7 @@
     </div>
       <div class="form-group">
         <label>Portfolio Name</label>
-        <input type="text" formControlName="portfolioName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.portfolioName.errors }" />
+        <input type="text" formControlName="portfolioName" maxlength="30" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.portfolioName.errors }" />
         <div *ngIf="submitted && f.portfolioName.errors" class="invalid-feedback">
             <div *ngIf="f.portfolioName.errors.required">Portfolio name is required</div>
         </div>
