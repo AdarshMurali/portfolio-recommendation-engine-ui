@@ -97,8 +97,9 @@ export class HomeComponent implements OnInit {
        (data : any) => {
         if(data.customerPreferenceId){
           console.log(data);
+          this.router.navigateByUrl('/recommendation'); 
           this.reset();
-          this.inputForm.reset(this.inputForm.value)
+          this.inputForm.reset(this.inputForm.value);
         }else{
 
         }
