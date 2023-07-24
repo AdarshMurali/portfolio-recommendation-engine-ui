@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   submitted = false;
   loggedInUser! : User ;
   inputForm! : FormGroup;
+  investmentSector! : any;
 
   constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService, private router: Router,
     private currencyPipe : CurrencyPipe) { }
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.setForm();
     this.loggedInUser =  this.portfolioRecomService.getUser();
+    this.investmentSector = this.fetchInvestmentSector();
   }
 
   setForm(){
@@ -48,10 +50,17 @@ export class HomeComponent implements OnInit {
   
   transformAmount(element : any){
     element.target.value = this.currencyPipe.transform(this.inputForm.controls.investmentAmount.value, '$');
-
-    // element.target.value = this.inputForm.controls.investmentAmount.value;
   }
 
+  fetchInvestmentSector(){
+    this.dataService.get('/CustomerPreference/getInvestmentSector/').subscribe((data : any) => {
+      this.investmentSector = data;
+    }, error => {
+      this.dataService.getMock('assets/mockData/investmentSector.json').subscribe((data : any) => {
+        this.investmentSector = data;
+      });
+   });
+  }
 
   columnDefs: ColDef[] = [
     { field: 'make' },

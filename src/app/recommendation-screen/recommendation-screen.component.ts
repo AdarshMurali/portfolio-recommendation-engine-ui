@@ -24,6 +24,12 @@ export class RecommendationScreenComponent implements OnInit {
     this.getUserRecommendation();
   }
 
+  checkDisable(){
+    var value =  this.selectedSecuritiesName.length <= 0 ? true : false;
+    console.log(value);
+    return value;
+  }
+
     getUserRecommendation(){
 
       this.recomendedData = this.dataService.getRecomendedData();

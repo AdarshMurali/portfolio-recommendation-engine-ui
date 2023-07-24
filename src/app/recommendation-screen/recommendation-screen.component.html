@@ -1,7 +1,7 @@
 <div id="recommendation-screen">
     <!-- <app-background></app-background> -->
     <div id="recommendation-screen-grid">
-        <h2 style="text-align : center; margin-bottom: 20px;">Recomended Stocks - {{ recomendedData.sector}}</h2>
+        <h2 style="text-align : center; margin-bottom: 20px;">Recomended Stocks - </h2>
         <div class="app-table">
             <table class="table table-bordered">
                 <thead>
@@ -29,7 +29,7 @@
                       </tr>
                 </tbody>
               </table>
-              <button type="submit" class="primary-blue-button" [disabled]="selectedSecurities.length <= 0" (click)="goToFinalStockList()">Buy</button>
+              <button type="button" class="primary-blue-button" [disabled]="selectedSecuritiesName.length <= 0" (click)="goToFinalStockList()">Buy</button>
         </div>
     </div>
 </div>
