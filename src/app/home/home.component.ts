@@ -85,7 +85,8 @@ export class HomeComponent implements OnInit {
     var preferenceRequest = {
           investmentAmount : parseInt(this.inputForm.controls.investmentAmount.value),
           investmentDuration : this.inputForm.controls.investmentDuration.value,
-          investmentSector : this.inputForm.controls.investmentSector.value,
+          // investmentSector : this.inputForm.controls.investmentSector.value,
+          investmentSector : 'Health Care',
           volatility : this.inputForm.controls.volatility.value,
           portfolioName : this.inputForm.controls.portfolioName.value,
           // userId : this.loggedInUser.userid,
@@ -95,13 +96,14 @@ export class HomeComponent implements OnInit {
 
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
-        if(data.customerPreferenceId){
+        if(data){
           console.log(data);
+          this.dataService.setRecomendedData(data);
           this.router.navigateByUrl('/recommendation'); 
-          this.reset();
-          this.inputForm.reset(this.inputForm.value);
+          // this.reset();
+          // this.inputForm.reset(this.inputForm.value);
         }else{
-
+          console.log('error')
         }
     },
     error => {

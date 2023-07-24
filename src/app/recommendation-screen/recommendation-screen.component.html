@@ -1,37 +1,35 @@
 <div id="recommendation-screen">
     <!-- <app-background></app-background> -->
     <div id="recommendation-screen-grid">
-        <h2 style="text-align : center; margin-bottom: 20px;">Recomended Stocks</h2>
+        <h2 style="text-align : center; margin-bottom: 20px;">Recomended Stocks - {{ recomendedData.sector}}</h2>
         <div class="app-table">
-            <table class="table">
+            <table class="table table-bordered">
                 <thead>
                   <tr>
-                    <th scope="col">#</th>
+                    <th scope="col">Select Stock</th>
                     <th scope="col">Ticker Symbol</th>
-                    <th scope="col">Security</th>
-                    <th scope="col">SecFilings</th>
-                    <th scope="col">GICS Sector</th>
-                    <th scope="col">GICS SubIndustry</th>
-                    <th scope="col">Date First Added</th>
-                    <th scope="col">Address Of Head Quarters</th>
-                    <th scope="col">CIK</th>
+                    <th scope="col">Stock Name</th>
+                    <th scope="col">Current Market Price</th>
+                    <th scope="col">Investment Duration</th>
+                    <th scope="col">Target Price</th>
+                    <th scope="col">Stock Loss</th>
+                    <th scope="col">Potential Upside</th>
                   </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let recommendedSecurity of recommendedSecurities">
-                          <td></td>
+                    <tr *ngFor="let recommendedSecurity of recomendedData.stockDetails">
+                          <td> <input type="checkbox" (change)="onChange(recommendedSecurity)"  class="custom-control-input" id="customCheck1"></td>
                           <td>{{recommendedSecurity.tickerSymbol}}</td>
-                          <td>{{recommendedSecurity.security}}</td>
-                          <td>{{recommendedSecurity.secFilings}}</td>
-                          <td>{{recommendedSecurity.gicsSector}}</td>
-                          <td>{{recommendedSecurity.gicsSubIndustry}}</td>
-                          <td>{{recommendedSecurity.dateFirstAdded}}</td>
-                          <td>{{recommendedSecurity.addressOfHeadQuarters}}</td>
-                          <td>{{recommendedSecurity.cik}}</td>
+                          <td>{{recommendedSecurity.stockName}}</td>
+                          <td>{{recommendedSecurity.currentMarketPrice}}</td>
+                          <td>{{recommendedSecurity.investmentDuration}}</td>
+                          <td>{{recommendedSecurity.targetPrice}}</td>
+                          <td>{{recommendedSecurity.stcokLoss}}</td>
+                          <td>{{recommendedSecurity.potentialUpside}}</td>
                       </tr>
                 </tbody>
               </table>
-              <button type="submit" class="primary-blue-button" (click)="goToFinalStockList()">Buy</button>
+              <button type="submit" class="primary-blue-button" [disabled]="selectedSecurities.length > 0" (click)="goToFinalStockList()">Buy</button>
         </div>
     </div>
 </div>
