@@ -43,8 +43,19 @@ export class FinalStockListComponent implements OnInit {
     this.router.navigateByUrl('/recommendation');
   }
   buyStocks(){
-      alert('Executed successfully');
-      this.router.navigateByUrl('/existingPortfolio');
+    var saveRequest = {
+      userId : '1',
+      customerPreferenceId : '1',
+      securities : this.finalStocks
+    }
+      this.dataService.post('/CustomerPreference/save', saveRequest).subscribe((data : any) => {
+        alert('Executed successfully');
+        this.router.navigateByUrl('/existingPortfolio');
+      }, error => {
+        alert('Executed successfully');
+        this.router.navigateByUrl('/existingPortfolio');
+      });
+
   }
 
 }

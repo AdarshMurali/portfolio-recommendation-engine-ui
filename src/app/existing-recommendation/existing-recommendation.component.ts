@@ -17,9 +17,16 @@ export class ExistingRecommendationComponent implements OnInit {
   }
 
   getSavedGoals(){
-    this.dataService.getMock('assets/mockData/exisitngPortfolioData.json').subscribe((data : any) => {
+
+    this.dataService.get('/CustomerPreference/getDashboardData').subscribe((data : any) => {
+      this.goals = data['exisitngPortfolios'];
+    }, error => {
+      this.dataService.getMock('assets/mockData/exisitngPortfolioData.json').subscribe((data : any) => {
         this.goals = data['exisitngPortfolios'];
     });
+    });
+
+
 
 
   }
