@@ -1,9 +1,13 @@
-version: "3"
+version: '3.9'
+
 services:
-    myapp:
-        build: .
-        ports:
-            - "8081:4200"
-        volumes:
-            - "/app/node_modules"
-            - ".:/app"
+  frontend:
+    image: adarshmurali/aadya_nginx:33
+    environment:
+      API_URL: http://backend:8080
+    ports:
+      - '80:80'
+  backend:
+    image: adarshmurali/adarsh_nginx:23
+    ports:
+      - '8080:8080'
