@@ -54,9 +54,9 @@
             <label for="investmentSector">Investment Sector</label>
             <select id="investmentSector" formControlName="investmentSector" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.investmentSector.errors }">
               <option selected>Choose...</option>
-              <option>Technology</option>
-              <option>Energy</option>
-              <option>Finance</option>
+              <option *ngFor="let sector of investmentSector" [value]="sector">
+                {{sector}}
+            </option>
             </select>
             <div *ngIf="submitted && f.investmentSector.errors" class="invalid-feedback">
               <div *ngIf="f.investmentSector.errors.required">Investment Sector is required</div>
