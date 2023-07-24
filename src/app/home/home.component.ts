@@ -105,17 +105,16 @@ export class HomeComponent implements OnInit {
 
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
-        if(data){
           console.log(data);
           this.dataService.setRecomendedData(data);
           this.router.navigateByUrl('/recommendation'); 
-          // this.reset();
-          // this.inputForm.reset(this.inputForm.value);
-        }else{
-          console.log('error')
-        }
     },
     error => {
+      this.dataService.getMock('/assets/mockData/recemended.json').subscribe(
+          (data : any) => {
+            this.dataService.setRecomendedData(data);
+            this.router.navigateByUrl('/recommendation'); 
+        });
         console.error('There was an error!', error);
     });
   }

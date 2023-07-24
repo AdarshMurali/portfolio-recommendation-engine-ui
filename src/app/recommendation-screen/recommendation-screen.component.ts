@@ -31,17 +31,7 @@ export class RecommendationScreenComponent implements OnInit {
   }
 
     getUserRecommendation(){
-
       this.recomendedData = this.dataService.getRecomendedData();
-
-      // this.dataService.getMock('assets/mockData/recommendation.json').subscribe(
-      //     (data : any) => {
-      //       this.recommendedSecurities = data['recommendedSecurities'];
-      //       console.log(this.recommendedSecurities);
-      //   },
-      //   error => {
-      //       console.error('There was an error!', error);
-      //   });
     }
     
     onChange(value: any): void {
