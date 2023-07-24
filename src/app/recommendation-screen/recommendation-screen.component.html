@@ -29,7 +29,7 @@
                       </tr>
                 </tbody>
               </table>
-              <button type="submit" class="primary-blue-button" [disabled]="selectedSecurities.length > 0" (click)="goToFinalStockList()">Buy</button>
+              <button type="submit" class="primary-blue-button" [disabled]="selectedSecurities.length <= 0" (click)="goToFinalStockList()">Buy</button>
         </div>
     </div>
 </div>

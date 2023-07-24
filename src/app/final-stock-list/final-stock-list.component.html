@@ -3,21 +3,37 @@
     <div id="middle"> 
         <h3 id="center">STOCK CMP QUANTITY AMOUNT NOW:</h3>
         <div id="left-panel">
-            <div style="margin-left: 5rem;" *ngFor="let stock of FinalStocks" >
-                <div id="inline-details">
-                    <input type="checkbox"/>
-                </div>
-                <div id="inline-details">
-                    {{stock.Symbol}}
-                </div>
-                <div id="inline-details">
-                    {{stock.StockName}}
+            <div class="app-table">
+                <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Ticker Symbol</th>
+                        <th scope="col">Stock Name</th>
+                        <th scope="col">Current Market Price</th>
+                        <th scope="col">Investment Duration</th>
+                        <th scope="col">Target Price</th>
+                        <th scope="col">Stock Loss</th>
+                        <th scope="col">Potential Upside</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let recommendedSecurity of finalStocks">
+                              <td>{{recommendedSecurity.tickerSymbol}}</td>
+                              <td>{{recommendedSecurity.stockName}}</td>
+                              <td>{{recommendedSecurity.currentMarketPrice}}</td>
+                              <td>{{recommendedSecurity.investmentDuration}}</td>
+                              <td>{{recommendedSecurity.targetPrice}}</td>
+                              <td>{{recommendedSecurity.stcokLoss}}</td>
+                              <td>{{recommendedSecurity.potentialUpside}}</td>
+                          </tr>
+                    </tbody>
+                  </table>
+                  <div>
+                    <button type="submit" class="primary-blue-button-back" (click)="goToRecommendationPage()">Previous</button>
+                    <button type="submit" class="primary-blue-button" (click)="buyStocks()">Execute Order</button>
                 </div>
             </div>
-            <div>
-                <button type="submit" class="primary-blue-button-back" (click)="goToRecommendationPage()">Previous</button>
-                <button type="submit" class="primary-blue-button" (click)="buyStocks()">Execute Order</button>
-            </div>
+
         </div>
 
 

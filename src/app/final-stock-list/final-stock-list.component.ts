@@ -11,25 +11,9 @@ import { Router } from '@angular/router';
 })
 export class FinalStockListComponent implements OnInit {
   constructor(private dataService: DataService, private router: Router) { }
-  FinalStocks: StockDetails[] = []
+  finalStocks: any[] = []
   
-  public getFinalStocks(){
-    // this.dataService.getFinalStockList().subscribe(result => {
-    //   result.forEach(res => 
-    //     this.FinalStocks.push(res)
-    //     )
-    // });
 
-    this.dataService.getMock('assets/mockData/finalStock.json').subscribe((result : any) => {
-      result.forEach((res : any) => 
-        this.FinalStocks.push(res)
-        )
-      this.rowData = this.FinalStocks
-    });
-
-
-
-  }
   columnDefs: ColDef[] = [
     {field: "isSelected", headerName: ""},
     {field: "Symbol", headerName: "Symbol"},
@@ -41,7 +25,18 @@ export class FinalStockListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getFinalStocks();
-    console.log(this.FinalStocks)
+    console.log(this.finalStocks)
+  }
+
+  public getFinalStocks(){
+    this.finalStocks = this.dataService.getSelectedSecurityData();
+    
+    // this.dataService.getMock('assets/mockData/finalStock.json').subscribe((result : any) => {
+    //   result.forEach((res : any) => 
+    //     this.finalStocks.push(res)
+    //     )
+    //   this.rowData = this.finalStocks
+    // });
   }
 
   goToRecommendationPage(){

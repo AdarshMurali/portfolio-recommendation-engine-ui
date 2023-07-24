@@ -51,6 +51,7 @@ export class RecommendationScreenComponent implements OnInit {
 
     goToFinalStockList(){
       console.log(this.selectedSecurities);
+      this.dataService.setSelectedSecurityData(this.selectedSecurities);
       this.router.navigateByUrl('/finalList');
     }
 }
