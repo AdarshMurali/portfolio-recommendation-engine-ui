@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-account-details',
@@ -9,8 +10,10 @@ import { Router } from '@angular/router';
 })
 export class AccountDetailsComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private dataService : DataService) { }
   public submitted : boolean = false;
+  public countries : any[] = [];
+  public states : any[] = [];
 
   inputForm : FormGroup = this.formBuilder.group({
     address1: ['', Validators.required, Validators.maxLength(6)],
@@ -22,6 +25,16 @@ export class AccountDetailsComponent implements OnInit {
   });
   
   ngOnInit(): void {
+    this.getCountryAndState();
+  }
+
+
+  getCountryAndState(){
+        
+    this.dataService.getMock('/assets/mockData/countAndState.json').subscribe((result : any) => {
+        this.countries = result.countries;
+
+    });
   }
   get f() { return this.inputForm.controls; }
 
