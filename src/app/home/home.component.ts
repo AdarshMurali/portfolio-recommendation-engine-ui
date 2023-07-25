@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   submitted = false;
   loggedInUser! : User ;
   inputForm! : FormGroup;
+  investmentSector! : any;
 
   constructor(private dataService : DataService,  private formBuilder: FormBuilder, private portfolioRecomService : PortfolioRecomService, private router: Router,
     private currencyPipe : CurrencyPipe) { }
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.setForm();
     this.loggedInUser =  this.portfolioRecomService.getUser();
+    this.investmentSector = this.fetchInvestmentSector();
   }
 
   setForm(){
@@ -48,33 +50,24 @@ export class HomeComponent implements OnInit {
   
   transformAmount(element : any){
     element.target.value = this.currencyPipe.transform(this.inputForm.controls.investmentAmount.value, '$');
-
-    // element.target.value = this.inputForm.controls.investmentAmount.value;
   }
 
-
-  columnDefs: ColDef[] = [
-    { field: 'make' },
-    { field: 'model' },
-    { field: 'price' }
-  ];
-  
-  rowData = [
-      { make: 'Toyota', model: 'Celica', price: 35000 },
-      { make: 'Ford', model: 'Mondeo', price: 32000 },
-      { make: 'Porsche', model: 'Boxster', price: 72000 }
-  ];
-
-  defaultColDef = {
-    sortable: true
-  };
+  fetchInvestmentSector(){
+    this.dataService.get('/CustomerPreference/getInvestmentSector/').subscribe((data : any) => {
+      this.investmentSector = data;
+    }, error => {
+      this.dataService.getMock('assets/mockData/investmentSector.json').subscribe((data : any) => {
+        this.investmentSector = data;
+      });
+   });
+  }
   
   // / convenience getter for easy access to form fields
   get f() { return this.inputForm.controls; }
 
   onSubmit(){
 
-    this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
+    // this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
 
     this.submitted = true;
     // stop here if form is invalid
@@ -83,28 +76,29 @@ export class HomeComponent implements OnInit {
     }
 
     var preferenceRequest = {
-          investmentAmount : this.inputForm.controls.investmentAmount.value,
+          investmentAmount : parseInt(this.inputForm.controls.investmentAmount.value),
           investmentDuration : this.inputForm.controls.investmentDuration.value,
-          investmentSector : this.inputForm.controls.investmentSector.value,
+          // investmentSector : this.inputForm.controls.investmentSector.value,
+          investmentSector : 'Health Care',
           volatility : this.inputForm.controls.volatility.value,
           portfolioName : this.inputForm.controls.portfolioName.value,
           // userId : this.loggedInUser.userid,
-          // userId : 3,
+          userId : 3,
     }
     console.log(preferenceRequest);
 
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
-        if(data.customerPreferenceId){
           console.log(data);
+          this.dataService.setRecomendedData(data);
           this.router.navigateByUrl('/recommendation'); 
-          this.reset();
-          this.inputForm.reset(this.inputForm.value);
-        }else{
-
-        }
     },
     error => {
+      this.dataService.getMock('/assets/mockData/recemended.json').subscribe(
+          (data : any) => {
+            this.dataService.setRecomendedData(data);
+            this.router.navigateByUrl('/recommendation'); 
+        });
         console.error('There was an error!', error);
     });
   }

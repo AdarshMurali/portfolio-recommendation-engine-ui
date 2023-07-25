@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 export class ExistingRecommendationComponent implements OnInit {
 
   public goals : any[] = [];
+  public totalInvestment : any = 0;
+
   constructor(private dataService : DataService, private router: Router) { }
 
   ngOnInit(): void {
@@ -17,11 +19,32 @@ export class ExistingRecommendationComponent implements OnInit {
   }
 
   getSavedGoals(){
-    this.dataService.getMock('assets/mockData/exisitngPortfolioData.json').subscribe((data : any) => {
+    var goalRequest = {
+      userId : 3
+    }
+    this.dataService.post('/CustomerPreference/getDashboardData', goalRequest).subscribe((data : any) => {
+      this.goals = data['exisitngPortfolios'];
+      this.totalInvestment = this.sum(this.goals);
+    }, error => {
+      this.dataService.getMock('assets/mockData/exisitngPortfolioData.json').subscribe((data : any) => {
         this.goals = data['exisitngPortfolios'];
+        this.totalInvestment = this.sum(this.goals);
     });
+    });
+  }
 
+      sum( arr : any ) {
+        var res = 0;
+        for(let i = 0; i < arr.length; i++){
+          res += arr[i].investmentAmount;
+      };
+        return res;
+      }
 
+  getStyle(goal : any){
+    var width = (goal.investmentAmount / this.totalInvestment)  * 100 ;
+    console.log(width);
+    return width;
   }
 
   getFirstLetter(goal:any,index:number){

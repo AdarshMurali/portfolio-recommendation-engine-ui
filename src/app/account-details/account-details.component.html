@@ -48,9 +48,9 @@
                         <label>Country</label>
                         <select id="state" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
                             <option selected>Choose...</option>
-                            <option>Technology</option>
-                            <option>Energy</option>
-                            <option>Finance</option>
+                            <option *ngFor="let country of countries" [value]="country">
+                                {{country.country}}
+                            </option>
                           </select>
                         <div *ngIf="(f.country.invalid && f.country.touched) || f.country.dirty">
                             <small *ngIf="f.country.errors?.required" class="text-danger">Country is required</small>
@@ -60,9 +60,9 @@
                         <label>State/Province</label>
                         <select id="state" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                             <option selected>Choose...</option>
-                            <option>Technology</option>
-                            <option>Energy</option>
-                            <option>Finance</option>
+                            <option *ngFor="let state of states" [value]="state">
+                                {{state}}
+                            </option>
                           </select>
                         <div *ngIf="(f.state.invalid && f.state.touched) || f.state.dirty">
                             <small *ngIf="f.state.errors?.required" class="text-danger">State is required</small>

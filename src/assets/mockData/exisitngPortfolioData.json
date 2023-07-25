@@ -1,15 +1,121 @@
 {
-    "exisitngPortfolios" : [
+    "exisitngPortfolios": [
         {
-            "portfolioName" : "Moderate Growth",
-            "createdAt" : "2023-03-12",
-            "totalInvestment" : "129743"
+            "customerPreferenceId": 1,
+            "investmentAmount": 453450,
+            "investmentDuration": 3,
+            "investmentSector": "Finance",
+            "volatility": "0 - 5 (Low Risk)",
+            "portfolioName": "gfh",
+            "userId": 3
         },
         {
-            "portfolioName" : "RiskTaker",
-            "createdAt" : "2023-03-12",
-            "totalInvestment" : "129743"
+            "customerPreferenceId": 2,
+            "investmentAmount": 3453,
+            "investmentDuration": 3,
+            "investmentSector": "Technology",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "gffffh",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 3,
+            "investmentAmount": 1234,
+            "investmentDuration": 6,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "dsfsdf",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 4,
+            "investmentAmount": 34,
+            "investmentDuration": 3,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "5435",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 5,
+            "investmentAmount": 786876,
+            "investmentDuration": 24,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "dfsd",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 6,
+            "investmentAmount": 435,
+            "investmentDuration": 12,
+            "investmentSector": "Health Care",
+            "volatility": "0 - 5 (Low Risk)",
+            "portfolioName": "5345",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 7,
+            "investmentAmount": 345,
+            "investmentDuration": 24,
+            "investmentSector": "Health Care",
+            "volatility": "0 - 5 (Low Risk)",
+            "portfolioName": "gfh",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 8,
+            "investmentAmount": 3423,
+            "investmentDuration": 3,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "fdgdf",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 9,
+            "investmentAmount": 567,
+            "investmentDuration": 3,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "ghj",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 10,
+            "investmentAmount": 45345,
+            "investmentDuration": 3,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "fgh",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 11,
+            "investmentAmount": 34534,
+            "investmentDuration": 12,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "rer",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 12,
+            "investmentAmount": 44,
+            "investmentDuration": 12,
+            "investmentSector": "Health Care",
+            "volatility": "5 - 15 (Medium Risk)",
+            "portfolioName": "fgb",
+            "userId": 3
+        },
+        {
+            "customerPreferenceId": 13,
+            "investmentAmount": 435,
+            "investmentDuration": 3,
+            "investmentSector": "Health Care",
+            "volatility": "15 - 100 (High Risk)",
+            "portfolioName": "543",
+            "userId": 3
         }
-
     ]
 }
