@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     console.log('calling setform');
     this.inputForm  = this.formBuilder.group({
       investmentAmount : ['', Validators.required],
-      investmentDuration: ['3', Validators.required ],
+      investmentDuration: ['12', Validators.required ],
       investmentSector : ['', [Validators.required]],
       volatility : ['', Validators.required],
       portfolioName : ['', Validators.required],
