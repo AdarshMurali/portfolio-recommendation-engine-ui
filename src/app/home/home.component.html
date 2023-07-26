@@ -33,13 +33,13 @@
           <label style="display: block;">Investment Duration (Months)</label> 
           <div id="radio-input">
             <label class="radio-inline">
-              <input type="radio" formControlName="investmentDuration" value="3" name="investmentDuration" checked><span class="value">3</span>
+              <input type="radio" formControlName="investmentDuration" value="3" name="investmentDuration" ><span class="value">3</span>
             </label>
             <label class="radio-inline">
               <input type="radio" formControlName="investmentDuration" value="6" name="investmentDuration"><span class="value">6</span>
             </label>
             <label class="radio-inline">
-              <input type="radio" formControlName="investmentDuration" value="12" name="investmentDuration"><span class="value">12</span>
+              <input type="radio" formControlName="investmentDuration" value="12" name="investmentDuration" checked><span class="value">12</span>
             </label>
             <label class="radio-inline">
               <input type="radio" formControlName="investmentDuration" value="24" name="investmentDuration"><span class="value">24</span>
@@ -81,8 +81,12 @@
             <div *ngIf="f.portfolioName.errors.required">Portfolio name is required</div>
         </div>
       </div>
-          <button type="submit" class="primary-blue-button">Calculate</button>
-        </form>
+      <div>
+      </div>
+        <button type="submit" class="primary-blue-button">Calculate</button>
+      </form>
+        
+        <button (click)="goToHomePage()" class="primary-orange-button">Back</button>
       </div>
       <div id="right-panel" class="col-md-7">
         <div id="potential-returns">

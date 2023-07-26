@@ -8,6 +8,7 @@ export class PortfolioRecomService {
 
   loggedInUser! : User ;
   customerPreferenceId! : string ;
+  savedStock! : any;
 
   constructor() { }
 
@@ -25,5 +26,13 @@ export class PortfolioRecomService {
 
   getCustomerPreferenceId(){
     return this.customerPreferenceId;
+  }
+
+  setSavedStockData(data : any){
+    this.savedStock = data;
+  }
+
+  getSavedStockData(){
+    return this.savedStock
   }
 }

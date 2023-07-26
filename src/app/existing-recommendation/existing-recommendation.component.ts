@@ -14,16 +14,19 @@ export class ExistingRecommendationComponent implements OnInit {
   public goals : any[] = [];
   public totalInvestment : any = 0;
   loggedInUser! : User ;
+  customerPreferenceId! : String;
 
   constructor(private dataService : DataService, private router: Router, private portfolioRecomService : PortfolioRecomService) { }
 
   ngOnInit(): void {
+    this.customerPreferenceId = this.portfolioRecomService.getCustomerPreferenceId();
     this.loggedInUser =  this.portfolioRecomService.getUser();
     this.getSavedGoals();
   }
 
   getSavedGoals(){
     var goalRequest = {
+      customerPreferenceId : this.customerPreferenceId,
       userId :  this.loggedInUser.userid,
     }
     this.dataService.post('/CustomerPreference/getDashboardData', goalRequest).subscribe((data : any) => {
@@ -62,7 +65,21 @@ export class ExistingRecommendationComponent implements OnInit {
   }
 
   goToRebalance(){
-    this.router.navigateByUrl('/recommendation');
+        var viewStockRequest = {
+          customerPreferenceId : this.customerPreferenceId,
+          userId : this.loggedInUser.userid,
+      }
+      console.log(viewStockRequest);
+      this.dataService.post('/CustomerPreference/getSavedStock', viewStockRequest).subscribe((data : any) => {
+        this.portfolioRecomService.setSavedStockData(data);
+         this.router.navigateByUrl('/recommendation');
+      }, error => {
+        this.dataService.getMock('assets/mockData/savedStock.json').subscribe((data : any) => {
+          this.portfolioRecomService.setSavedStockData(data);
+          this.router.navigateByUrl('/recommendation');
+      });
+      });
+   
   }
 
 }

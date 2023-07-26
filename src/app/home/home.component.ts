@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
     console.log('calling setform');
     this.inputForm  = this.formBuilder.group({
       investmentAmount : ['', Validators.required],
-      investmentDuration: ['3', Validators.required ],
+      investmentDuration: ['12', Validators.required ],
       investmentSector : ['', [Validators.required]],
       volatility : ['', Validators.required],
       portfolioName : ['', Validators.required],
@@ -67,8 +67,6 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
 
-    // this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
-
     this.submitted = true;
     // stop here if form is invalid
     if (this.inputForm.invalid) {
@@ -78,12 +76,10 @@ export class HomeComponent implements OnInit {
     var preferenceRequest = {
           investmentAmount : parseInt(this.inputForm.controls.investmentAmount.value),
           investmentDuration : this.inputForm.controls.investmentDuration.value,
-          // investmentDuration : '2',
           investmentSector : this.inputForm.controls.investmentSector.value,
           volatility : this.inputForm.controls.volatility.value,
           portfolioName : this.inputForm.controls.portfolioName.value,
           userId : this.loggedInUser.userid,
-          // userId : 3,
     }
     console.log(preferenceRequest);
 
@@ -108,4 +104,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  goToHomePage(){
+    this.router.navigateByUrl('/home'); 
+  }
 }

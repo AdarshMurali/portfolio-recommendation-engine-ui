@@ -1,401 +1,170 @@
 {
     "stockDetails": [
         {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 301.86,
-            "stockName": "Lilly (Eli) & Co.",
-            "tickerSymbol": "LLY"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 460.56,
-            "stockName": "Humana Inc.",
-            "tickerSymbol": "HUM"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 86.91,
-            "stockName": "Merck & Co.",
-            "tickerSymbol": "MRK"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 534.82,
-            "stockName": "United Health Group Inc.",
-            "tickerSymbol": "UNH"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 260.94,
-            "stockName": "HCA Holdings",
-            "tickerSymbol": "HCA"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 279.7,
-            "stockName": "Intuitive Surgical Inc.",
-            "tickerSymbol": "ISRG"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 568.9,
-            "stockName": "Thermo Fisher Scientific",
-            "tickerSymbol": "TMO"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 254.02,
-            "stockName": "Amgen Inc",
-            "tickerSymbol": "AMGN"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 162.31,
-            "stockName": "AbbVie",
-            "tickerSymbol": "ABBV"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 117.69,
-            "stockName": "Abbott Laboratories",
-            "tickerSymbol": "ABT"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 126.44,
-            "stockName": "Agilent Technologies Inc",
-            "tickerSymbol": "A"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 261.7,
-            "stockName": "Stryker Corp.",
-            "tickerSymbol": "SYK"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 187.3,
-            "stockName": "Zoetis",
-            "tickerSymbol": "ZTS"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 44.25,
-            "stockName": "Boston Scientific",
-            "tickerSymbol": "BSX"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 1318.36,
-            "stockName": "Mettler Toledo",
-            "tickerSymbol": "MTD"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 179.9,
-            "stockName": "Johnson & Johnson",
-            "tickerSymbol": "JNJ"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 91.36,
-            "stockName": "Henry Schein",
-            "tickerSymbol": "HSIC"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 733.02,
-            "stockName": "Regeneron",
-            "tickerSymbol": "REGN"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 120.02,
-            "stockName": "Edwards Lifesciences",
-            "tickerSymbol": "EW"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 496.78,
-            "stockName": "IDEXX Laboratories",
-            "tickerSymbol": "IDXX"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 53.12,
-            "stockName": "Pfizer Inc.",
-            "tickerSymbol": "PFE"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 135.92,
-            "stockName": "Quest Diagnostics",
-            "tickerSymbol": "DGX"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 76.33,
-            "stockName": "Hologic",
-            "tickerSymbol": "HOLX"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 323.25,
-            "stockName": "McKesson Corp.",
-            "tickerSymbol": "MCK"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 287.97,
-            "stockName": "Vertex Pharmaceuticals Inc",
-            "tickerSymbol": "VRTX"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 161.42,
-            "stockName": "PerkinElmer",
-            "tickerSymbol": "PKI"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 259.21,
-            "stockName": "CIGNA Corp.",
-            "tickerSymbol": "CI"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 86.54,
-            "stockName": "Centene Corporation",
-            "tickerSymbol": "CNC"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 295.39,
-            "stockName": "Waters Corporation",
-            "tickerSymbol": "WAT"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 161.21,
-            "stockName": "AmerisourceBergen Corp",
-            "tickerSymbol": "ABC"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 77.51,
-            "stockName": "Bristol-Myers Squibb",
-            "tickerSymbol": "BMY"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 151.14,
-            "stockName": "Universal Health Services, Inc.",
-            "tickerSymbol": "UHS"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 454.26733,
+            "investmentDuration": 12.0,
             "currentMarketPrice": 399.62,
             "stockName": "The Cooper Companies",
-            "tickerSymbol": "COO"
+            "tickerSymbol": "COO",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
         },
         {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 269.04,
-            "stockName": "Laboratory Corp. of America Holding",
-            "tickerSymbol": "LH"
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 92.57082,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 86.54,
+            "stockName": "Centene Corporation",
+            "tickerSymbol": "CNC",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
         },
         {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 92.57082,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 259.21,
+            "stockName": "CIGNA Corp.",
+            "tickerSymbol": "CI",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
+        },
+        {
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 92.57082,
+            "investmentDuration": 12.0,
             "currentMarketPrice": 62.96,
             "stockName": "Cardinal Health Inc.",
-            "tickerSymbol": "CAH"
+            "tickerSymbol": "CAH",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
         },
         {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 336.49,
-            "stockName": "Illumina Inc",
-            "tickerSymbol": "ILMN"
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 64.41593,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 44.25,
+            "stockName": "Boston Scientific",
+            "tickerSymbol": "BSX",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
         },
         {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 126.0,
-            "stockName": "Zimmer Biomet Holdings",
-            "tickerSymbol": "ZBH"
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 92.57082,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 77.51,
+            "stockName": "Bristol-Myers Squibb",
+            "tickerSymbol": "BMY",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
         },
         {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 109.02,
-            "stockName": "Medtronic plc",
-            "tickerSymbol": "MDT"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 121.45,
-            "stockName": "DaVita Inc.",
-            "tickerSymbol": "DVA"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 61.82,
-            "stockName": "Gilead Sciences",
-            "tickerSymbol": "GILD"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 76.44,
-            "stockName": "Baxter International Inc.",
-            "tickerSymbol": "BAX"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 49.07,
-            "stockName": "Dentsply Sirona",
-            "tickerSymbol": "XRAY"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
-            "currentMarketPrice": 271.68,
-            "stockName": "Becton Dickinson",
-            "tickerSymbol": "BDX"
-        },
-        {
-            "potentialUpside": 0.0,
-            "stcokLoss": 0.0,
-            "targetPrice": 0.0,
-            "investmentDuration": 0.0,
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 124.651054,
+            "investmentDuration": 12.0,
             "currentMarketPrice": 212.55,
             "stockName": "BIOGEN IDEC Inc.",
-            "tickerSymbol": "BIIB"
+            "tickerSymbol": "BIIB",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
+        },
+        {
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 190.81314,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 271.68,
+            "stockName": "Becton Dickinson",
+            "tickerSymbol": "BDX",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
+        },
+        {
+            "potentialUpside": 15.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 199.36856,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 76.44,
+            "stockName": "Baxter International Inc.",
+            "tickerSymbol": "BAX",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
+        },
+        {
+            "potentialUpside": 5.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 283.86462,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 117.69,
+            "stockName": "Abbott Laboratories",
+            "tickerSymbol": "ABT",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
+        },
+        {
+            "potentialUpside": 5.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 124.651054,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 161.21,
+            "stockName": "AmerisourceBergen Corp",
+            "tickerSymbol": "ABC",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
+        },
+        {
+            "potentialUpside": 5.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 124.651054,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 162.31,
+            "stockName": "AbbVie",
+            "tickerSymbol": "ABBV",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
+        },
+        {
+            "potentialUpside": 5.0,
+            "stcokLoss": 8.0,
+            "targetPrice": 124.651054,
+            "investmentDuration": 12.0,
+            "currentMarketPrice": 126.44,
+            "stockName": "Agilent Technologies Inc",
+            "tickerSymbol": "A",
+            "industry": null,
+            "portfolioName": null,
+            "sector": null
         }
     ],
+    "customerPreference": {
+        "customerPreferenceId": 33,
+        "investmentAmount": 8325,
+        "investmentDuration": 12,
+        "investmentSector": "Health Care",
+        "volatility": "5,15",
+        "portfolioName": "Health Care Portfolio",
+        "userId": 9999
+    },
     "sector": "Health Care"
 }

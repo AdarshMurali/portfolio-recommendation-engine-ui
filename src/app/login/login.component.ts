@@ -62,11 +62,14 @@ export class LoginComponent implements OnInit {
            }
        },
        error => {
+          this.dataService.getMock('assets/mockData/user.json').subscribe((data : any) => {
+            this.portfolioRecomService.setUser(data.user);
+            this.router.navigateByUrl('/home');
+        });
            console.error('There was an error!', error);
            if(error.error.status == 404){
             this.showErrorMessage = true;
             this.errorMessage = 'User is not found, please signup';
-            //show popup - error.error.message
            }
        });
       }

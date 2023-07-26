@@ -17,11 +17,29 @@ export class RecommendationScreenComponent implements OnInit {
   selectedSecurities: any[] = [];
   selectedSecuritiesName: any[] = [];
 
+  savedStockData : any = [];
+  header : string = '';
+  isRecommendedFlow : boolean = true;
+
   constructor(private dataService : DataService, private portfolioRecomService : PortfolioRecomService, private router: Router) { }
 
   ngOnInit(): void {
     this.loggedInUser =  this.portfolioRecomService.getUser();
-    this.getUserRecommendation();
+
+    this.savedStockData = this.portfolioRecomService.getSavedStockData();
+    debugger;
+    if(this.savedStockData ){
+      this.recomendedData = {
+        stockDetails : ''
+      }
+      this.recomendedData.stockDetails = this.savedStockData.securitiesList;
+      this.header = 'Saved Stock';
+      this.isRecommendedFlow = false;
+    }else{
+      this.header = 'Recomended Stocks';
+      this.getUserRecommendation();
+    }
+
   }
 
   checkDisable(){
@@ -49,5 +67,14 @@ export class RecommendationScreenComponent implements OnInit {
       console.log(this.selectedSecurities);
       this.dataService.setSelectedSecurityData(this.selectedSecurities);
       this.router.navigateByUrl('/finalList');
+    }
+
+    goToRecommendations(){
+      if(this.isRecommendedFlow){
+        this.router.navigateByUrl('/clientPreference');
+      } else{
+        this.router.navigateByUrl('/existingPortfolio');
+      }
+      
     }
 }
