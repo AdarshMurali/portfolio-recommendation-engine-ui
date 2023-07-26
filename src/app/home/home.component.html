@@ -53,7 +53,7 @@
         <div class="form-group">
             <label for="investmentSector">Investment Sector</label>
             <select id="investmentSector" formControlName="investmentSector" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.investmentSector.errors }">
-              <option selected>Choose...</option>
+              <option value="Health Care" selected>Choose...</option>
               <option *ngFor="let sector of investmentSector" [value]="sector">
                 {{sector}}
             </option>
@@ -65,10 +65,10 @@
       <div class="form-group">
         <label for="volatility">Volatility</label>
         <select id="volatility" formControlName="volatility" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.volatility.errors }">
-          <option selected>Choose...</option>
-          <option>0 - 5 (Low Risk)</option>
-          <option>5 - 15 (Medium Risk)</option>
-          <option>15 - 100 (High Risk)</option>
+          <option value="0,4" selected>Choose...</option>
+          <option value="0,4">0 - 5 (Low Risk)</option>
+          <option value="5,15">5 - 15 (Medium Risk)</option>
+          <option value="16,100">15 - 100 (High Risk)</option>
         </select>
         <div *ngIf="submitted && f.volatility.errors" class="invalid-feedback">
           <div *ngIf="f.volatility.errors.required">Volatility is required</div>
