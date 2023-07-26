@@ -71,9 +71,9 @@ export class RecommendationScreenComponent implements OnInit {
 
     goToRecommendations(){
       if(this.isRecommendedFlow){
-        this.router.navigateByUrl('/existingPortfolio')
+        this.router.navigateByUrl('/clientPreference');
       } else{
-        this.router.navigateByUrl('/clientPreference')
+        this.router.navigateByUrl('/existingPortfolio');
       }
       
     }
