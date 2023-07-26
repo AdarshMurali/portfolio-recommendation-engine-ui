@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/85ff2029-e213-49f8-9262-5c7088081516/resourceGroups/PM_group/providers/Microsoft.Web/sites/PMRecomendation",
+    "appService.deploySubpath": "dist"
+}

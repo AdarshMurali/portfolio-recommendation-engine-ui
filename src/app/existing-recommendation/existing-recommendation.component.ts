@@ -26,6 +26,7 @@ export class ExistingRecommendationComponent implements OnInit {
 
   getSavedGoals(){
     var goalRequest = {
+      customerPreferenceId : this.customerPreferenceId,
       userId :  this.loggedInUser.userid,
     }
     this.dataService.post('/CustomerPreference/getDashboardData', goalRequest).subscribe((data : any) => {
