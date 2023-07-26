@@ -46,9 +46,9 @@ export class FinalStockListComponent implements OnInit {
     var saveRequest = {
       userId : '1',
       customerPreferenceId : '1',
-      securities : this.finalStocks
+      securitiesList : this.finalStocks
     }
-      this.dataService.post('/CustomerPreference/save', saveRequest).subscribe((data : any) => {
+      this.dataService.post('/CustomerPreference/saveCustPreferedtocks', saveRequest).subscribe((data : any) => {
         alert('Executed successfully');
         this.router.navigateByUrl('/existingPortfolio');
       }, error => {

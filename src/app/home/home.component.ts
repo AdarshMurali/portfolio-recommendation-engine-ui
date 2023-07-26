@@ -77,7 +77,8 @@ export class HomeComponent implements OnInit {
 
     var preferenceRequest = {
           investmentAmount : parseInt(this.inputForm.controls.investmentAmount.value),
-          investmentDuration : this.inputForm.controls.investmentDuration.value,
+          // investmentDuration : this.inputForm.controls.investmentDuration.value,
+          investmentDuration : '2',
           // investmentSector : this.inputForm.controls.investmentSector.value,
           investmentSector : 'Health Care',
           volatility : this.inputForm.controls.volatility.value,
@@ -89,9 +90,13 @@ export class HomeComponent implements OnInit {
 
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
+        if(data.stockDetails.length > 0){
           console.log(data);
           this.dataService.setRecomendedData(data);
           this.router.navigateByUrl('/recommendation'); 
+        }else{
+          alert('Please choose other crietria');
+        }
     },
     error => {
       this.dataService.getMock('/assets/mockData/recemended.json').subscribe(
