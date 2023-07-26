@@ -14,10 +14,12 @@ export class ExistingRecommendationComponent implements OnInit {
   public goals : any[] = [];
   public totalInvestment : any = 0;
   loggedInUser! : User ;
+  customerPreferenceId! : String;
 
   constructor(private dataService : DataService, private router: Router, private portfolioRecomService : PortfolioRecomService) { }
 
   ngOnInit(): void {
+    this.customerPreferenceId = this.portfolioRecomService.getCustomerPreferenceId();
     this.loggedInUser =  this.portfolioRecomService.getUser();
     this.getSavedGoals();
   }
@@ -62,7 +64,21 @@ export class ExistingRecommendationComponent implements OnInit {
   }
 
   goToRebalance(){
-    this.router.navigateByUrl('/recommendation');
+        var viewStockRequest = {
+          // customerPreferenceId : this.customerPreferenceId,
+          // userId : this.loggedInUser.userid,
+          userId : 3,
+          customerPreferenceId : '11'
+      }
+      console.log(viewStockRequest);
+      this.dataService.post('/CustomerPreference/getSavedStock', viewStockRequest).subscribe((data : any) => {
+        this.portfolioRecomService.setSavedStockData(data);
+         this.router.navigateByUrl('/recommendation');
+      }, error => {
+        // alert('Executed successfully');
+         // this.router.navigateByUrl('/recommendation');
+      });
+   
   }
 
 }

@@ -17,10 +17,15 @@ export class RecommendationScreenComponent implements OnInit {
   selectedSecurities: any[] = [];
   selectedSecuritiesName: any[] = [];
 
+  savedStockData : any[] = [];
+
   constructor(private dataService : DataService, private portfolioRecomService : PortfolioRecomService, private router: Router) { }
 
   ngOnInit(): void {
     this.loggedInUser =  this.portfolioRecomService.getUser();
+
+    this.savedStockData = this.portfolioRecomService.getSavedStockData();
+    debugger;
     this.getUserRecommendation();
   }
 
