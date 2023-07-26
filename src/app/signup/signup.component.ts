@@ -59,7 +59,10 @@ export class SignupComponent implements OnInit {
           }
       },
       error => {
-          console.error('There was an error!', error);
+        this.dataService.getMock('assets/mockData/user.json').subscribe((data : any) => {
+          this.portfolioRecomService.setUser(data.user);
+          this.router.navigateByUrl('/account');
+      });
       });
 
     }

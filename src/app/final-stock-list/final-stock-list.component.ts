@@ -35,13 +35,7 @@ export class FinalStockListComponent implements OnInit {
 
   public getFinalStocks(){
     this.finalStocks = this.dataService.getSelectedSecurityData();
-    
-    // this.dataService.getMock('assets/mockData/finalStock.json').subscribe((result : any) => {
-    //   result.forEach((res : any) => 
-    //     this.finalStocks.push(res)
-    //     )
-    //   this.rowData = this.finalStocks
-    // });
+
   }
 
   goToRecommendationPage(){

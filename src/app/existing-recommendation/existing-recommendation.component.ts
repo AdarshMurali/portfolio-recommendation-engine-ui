@@ -65,10 +65,8 @@ export class ExistingRecommendationComponent implements OnInit {
 
   goToRebalance(){
         var viewStockRequest = {
-          // customerPreferenceId : this.customerPreferenceId,
-          // userId : this.loggedInUser.userid,
-          userId : 3,
-          customerPreferenceId : '11'
+          customerPreferenceId : this.customerPreferenceId,
+          userId : this.loggedInUser.userid,
       }
       console.log(viewStockRequest);
       this.dataService.post('/CustomerPreference/getSavedStock', viewStockRequest).subscribe((data : any) => {
