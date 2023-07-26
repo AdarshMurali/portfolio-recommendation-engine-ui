@@ -77,8 +77,8 @@ export class HomeComponent implements OnInit {
 
     var preferenceRequest = {
           investmentAmount : parseInt(this.inputForm.controls.investmentAmount.value),
-          investmentDuration : this.inputForm.controls.investmentDuration.value,
-          // investmentDuration : '2',
+          // investmentDuration : this.inputForm.controls.investmentDuration.value,
+          investmentDuration : '12',
           investmentSector : this.inputForm.controls.investmentSector.value,
           volatility : this.inputForm.controls.volatility.value,
           portfolioName : this.inputForm.controls.portfolioName.value,
