@@ -17,7 +17,7 @@ export class RecommendationScreenComponent implements OnInit {
   selectedSecurities: any[] = [];
   selectedSecuritiesName: any[] = [];
 
-  savedStockData : any[] = [];
+  savedStockData : any = [];
 
   constructor(private dataService : DataService, private portfolioRecomService : PortfolioRecomService, private router: Router) { }
 
@@ -26,7 +26,15 @@ export class RecommendationScreenComponent implements OnInit {
 
     this.savedStockData = this.portfolioRecomService.getSavedStockData();
     debugger;
-    this.getUserRecommendation();
+    if(this.savedStockData ){
+      this.recomendedData = {
+        stockDetails : ''
+      }
+      this.recomendedData.stockDetails = this.savedStockData.securitiesList;
+    }else{
+      this.getUserRecommendation();
+    }
+
   }
 
   checkDisable(){

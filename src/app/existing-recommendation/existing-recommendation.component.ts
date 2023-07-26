@@ -26,7 +26,8 @@ export class ExistingRecommendationComponent implements OnInit {
 
   getSavedGoals(){
     var goalRequest = {
-      userId :  this.loggedInUser.userid,
+      // userId :  this.loggedInUser.userid,
+      userId :  '13',
     }
     this.dataService.post('/CustomerPreference/getDashboardData', goalRequest).subscribe((data : any) => {
       this.goals = data['exisitngPortfolios'];
