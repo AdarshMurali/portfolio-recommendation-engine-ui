@@ -77,21 +77,21 @@ export class HomeComponent implements OnInit {
 
     var preferenceRequest = {
           investmentAmount : parseInt(this.inputForm.controls.investmentAmount.value),
-          // investmentDuration : this.inputForm.controls.investmentDuration.value,
-          investmentDuration : '2',
-          // investmentSector : this.inputForm.controls.investmentSector.value,
-          investmentSector : 'Health Care',
+          investmentDuration : this.inputForm.controls.investmentDuration.value,
+          // investmentDuration : '2',
+          investmentSector : this.inputForm.controls.investmentSector.value,
           volatility : this.inputForm.controls.volatility.value,
           portfolioName : this.inputForm.controls.portfolioName.value,
-          // userId : this.loggedInUser.userid,
-          userId : 3,
+          userId : this.loggedInUser.userid,
+          // userId : 3,
     }
     console.log(preferenceRequest);
 
     this.dataService.post('/CustomerPreference/savePreference', preferenceRequest).subscribe(
        (data : any) => {
         if(data.stockDetails.length > 0){
-          console.log(data);
+          console.log(data.customerPreference.customerPreferenceId);
+          this.portfolioRecomService.setCustomerPreferenceId(data.customerPreference.customerPreferenceId);
           this.dataService.setRecomendedData(data);
           this.router.navigateByUrl('/recommendation'); 
         }else{

@@ -3,6 +3,8 @@ import { StockDetails } from '../models/StockDetails';
 import { DataService } from '../services/data.service';
 import { ColDef } from 'ag-grid-community';
 import { Router } from '@angular/router';
+import { User } from '../shared/models/user';
+import { PortfolioRecomService } from '../portfolio-recom.service';
 
 @Component({
   selector: 'app-final-stock-list',
@@ -10,9 +12,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./final-stock-list.component.scss']
 })
 export class FinalStockListComponent implements OnInit {
-  constructor(private dataService: DataService, private router: Router) { }
+  constructor(private dataService: DataService, private router: Router, private portfolioRecomService : PortfolioRecomService) { }
   finalStocks: any[] = []
-  
+  loggedInUser! : User ;
+  customerPreferenceId! : String;
 
   columnDefs: ColDef[] = [
     {field: "isSelected", headerName: ""},
@@ -24,6 +27,8 @@ export class FinalStockListComponent implements OnInit {
   rowData: StockDetails[] = []
 
   ngOnInit(): void {
+    this.customerPreferenceId = this.portfolioRecomService.getCustomerPreferenceId();
+    this.loggedInUser =  this.portfolioRecomService.getUser();
     this.getFinalStocks();
     console.log(this.finalStocks)
   }
@@ -44,8 +49,8 @@ export class FinalStockListComponent implements OnInit {
   }
   buyStocks(){
     var saveRequest = {
-      userId : '1',
-      customerPreferenceId : '1',
+      userId : this.loggedInUser.userid,
+      customerPreferenceId : this.customerPreferenceId,
       securitiesList : this.finalStocks
     }
       this.dataService.post('/CustomerPreference/saveCustPreferedtocks', saveRequest).subscribe((data : any) => {

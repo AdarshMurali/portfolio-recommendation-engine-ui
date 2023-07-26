@@ -7,6 +7,7 @@ import { User } from './shared/models/user';
 export class PortfolioRecomService {
 
   loggedInUser! : User ;
+  customerPreferenceId! : string ;
 
   constructor() { }
 
@@ -16,5 +17,13 @@ export class PortfolioRecomService {
 
   getUser(){
     return this.loggedInUser;
+  }
+
+  setCustomerPreferenceId(id : string){
+    this.customerPreferenceId = id;
+  }
+
+  getCustomerPreferenceId(){
+    return this.customerPreferenceId;
   }
 }

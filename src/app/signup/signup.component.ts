@@ -33,7 +33,6 @@ export class SignupComponent implements OnInit {
 
     onSubmit(){
     
-      this.router.navigateByUrl('/account');
       
       this.submitted = true;
   
@@ -54,7 +53,7 @@ export class SignupComponent implements OnInit {
           console.log(data);
           if(data.user.userid){
             this.portfolioRecomService.setUser(data.user);
-            this.router.navigateByUrl('/home');
+            this.router.navigateByUrl('/account');
           }else{
             console.log('raise error');
           }

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Router } from '@angular/router';
+import { PortfolioRecomService } from '../portfolio-recom.service';
+import { User } from '../shared/models/user';
 
 @Component({
   selector: 'app-existing-recommendation',
@@ -11,16 +13,18 @@ export class ExistingRecommendationComponent implements OnInit {
 
   public goals : any[] = [];
   public totalInvestment : any = 0;
+  loggedInUser! : User ;
 
-  constructor(private dataService : DataService, private router: Router) { }
+  constructor(private dataService : DataService, private router: Router, private portfolioRecomService : PortfolioRecomService) { }
 
   ngOnInit(): void {
+    this.loggedInUser =  this.portfolioRecomService.getUser();
     this.getSavedGoals();
   }
 
   getSavedGoals(){
     var goalRequest = {
-      userId : 3
+      userId :  this.loggedInUser.userid,
     }
     this.dataService.post('/CustomerPreference/getDashboardData', goalRequest).subscribe((data : any) => {
       this.goals = data['exisitngPortfolios'];
