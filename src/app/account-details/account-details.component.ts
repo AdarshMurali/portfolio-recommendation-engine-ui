@@ -36,6 +36,17 @@ export class AccountDetailsComponent implements OnInit {
 
     });
   }
+
+  getStates(){
+    var selectedCountry = this.inputForm.controls.country.value
+    this.countries.forEach(country => {
+      if(country.country == selectedCountry){
+        this.states = country.states
+        console.log(this.states)
+      }
+    })
+  }
+
   get f() { return this.inputForm.controls; }
 
   onSubmit(){

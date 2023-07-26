@@ -81,8 +81,12 @@
             <div *ngIf="f.portfolioName.errors.required">Portfolio name is required</div>
         </div>
       </div>
-          <button type="submit" class="primary-blue-button">Calculate</button>
-        </form>
+      <div>
+      </div>
+        <button type="submit" class="primary-blue-button">Calculate</button>
+      </form>
+        
+        <button (click)="goToHomePage()" class="primary-orange-button">Back</button>
       </div>
       <div id="right-panel" class="col-md-7">
         <div id="potential-returns">

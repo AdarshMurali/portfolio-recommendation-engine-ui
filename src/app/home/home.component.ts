@@ -108,4 +108,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  goToHomePage(){
+    this.router.navigateByUrl('/home'); 
+  }
 }
