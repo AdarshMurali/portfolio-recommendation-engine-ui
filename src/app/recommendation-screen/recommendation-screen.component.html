@@ -2,7 +2,7 @@
     <!-- <app-background></app-background> -->
     <div id="recommendation-screen-grid">
         <h2 style="text-align : center; margin-bottom: 20px;">Recomended Stocks - </h2>
-        <div class="app-table">
+        <div class="app-table" style="padding-bottom: 1rem;">
             <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -29,6 +29,7 @@
                       </tr>
                 </tbody>
               </table>
+              <button type="button" class="primary-orange-button" (click)="goToRecommendations()">Back</button>
               <button type="button" class="primary-blue-button" [disabled]="selectedSecuritiesName.length <= 0" (click)="goToFinalStockList()">Buy</button>
         </div>
     </div>

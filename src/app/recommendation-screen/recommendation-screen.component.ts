@@ -50,4 +50,8 @@ export class RecommendationScreenComponent implements OnInit {
       this.dataService.setSelectedSecurityData(this.selectedSecurities);
       this.router.navigateByUrl('/finalList');
     }
+
+    goToRecommendations(){
+      this.router.navigateByUrl('/clientPreference')
+    }
 }

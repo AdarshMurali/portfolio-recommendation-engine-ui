@@ -46,9 +46,9 @@
                     </div>
                     <div class="form-group" class="accounts-inputs">
                         <label>Country</label>
-                        <select id="state" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                        <select id="country" formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }" (change)="getStates()">
                             <option selected>Choose...</option>
-                            <option *ngFor="let country of countries" [value]="country">
+                            <option *ngFor="let country of countries" [value]="country.country" >
                                 {{country.country}}
                             </option>
                           </select>
@@ -56,7 +56,7 @@
                             <small *ngIf="f.country.errors?.required" class="text-danger">Country is required</small>
                         </div>
                     </div>
-                    <div class="form-group" class="accounts-inputs">
+                    <div *ngIf="inputForm.controls.country.value != ''" class="form-group" class="accounts-inputs">
                         <label>State/Province</label>
                         <select id="state" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.state.errors }">
                             <option selected>Choose...</option>
