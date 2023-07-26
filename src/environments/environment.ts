@@ -5,8 +5,9 @@
 
 export const environment = {
   production: false,
+  backendUrl : "http://localhost:8080/api"
   // backendUrl : "http://backend:8080/api/"
-  backendUrl: "portfoliorecomendation.azurewebsites.net/api/"
+  // backendUrl: "portfoliorecomendation.azurewebsites.net/api"
   // backendUrl: process.env.API_URL || "http://localhost:8080"
 };
 
