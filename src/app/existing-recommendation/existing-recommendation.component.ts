@@ -26,8 +26,7 @@ export class ExistingRecommendationComponent implements OnInit {
 
   getSavedGoals(){
     var goalRequest = {
-      // userId :  this.loggedInUser.userid,
-      userId :  '13',
+      userId :  this.loggedInUser.userid,
     }
     this.dataService.post('/CustomerPreference/getDashboardData', goalRequest).subscribe((data : any) => {
       this.goals = data['exisitngPortfolios'];
@@ -76,8 +75,10 @@ export class ExistingRecommendationComponent implements OnInit {
         this.portfolioRecomService.setSavedStockData(data);
          this.router.navigateByUrl('/recommendation');
       }, error => {
-        // alert('Executed successfully');
-         // this.router.navigateByUrl('/recommendation');
+        this.dataService.getMock('assets/mockData/savedStock.json').subscribe((data : any) => {
+          this.portfolioRecomService.setSavedStockData(data);
+          this.router.navigateByUrl('/recommendation');
+      });
       });
    
   }

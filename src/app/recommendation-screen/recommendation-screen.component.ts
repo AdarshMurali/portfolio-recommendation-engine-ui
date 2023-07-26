@@ -18,6 +18,8 @@ export class RecommendationScreenComponent implements OnInit {
   selectedSecuritiesName: any[] = [];
 
   savedStockData : any = [];
+  header : string = '';
+  isRecommendedFlow : boolean = true;
 
   constructor(private dataService : DataService, private portfolioRecomService : PortfolioRecomService, private router: Router) { }
 
@@ -31,7 +33,10 @@ export class RecommendationScreenComponent implements OnInit {
         stockDetails : ''
       }
       this.recomendedData.stockDetails = this.savedStockData.securitiesList;
+      this.header = 'Saved Stock';
+      this.isRecommendedFlow = false;
     }else{
+      this.header = 'Recomended Stocks';
       this.getUserRecommendation();
     }
 
@@ -65,6 +70,11 @@ export class RecommendationScreenComponent implements OnInit {
     }
 
     goToRecommendations(){
-      this.router.navigateByUrl('/clientPreference')
+      if(this.isRecommendedFlow){
+        this.router.navigateByUrl('/existingPortfolio')
+      } else{
+        this.router.navigateByUrl('/clientPreference')
+      }
+      
     }
 }

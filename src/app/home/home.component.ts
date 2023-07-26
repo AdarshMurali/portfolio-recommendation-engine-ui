@@ -67,8 +67,6 @@ export class HomeComponent implements OnInit {
 
   onSubmit(){
 
-    // this.router.navigateByUrl('/recommendation'); //ToDo - Need to remove
-
     this.submitted = true;
     // stop here if form is invalid
     if (this.inputForm.invalid) {
@@ -77,13 +75,11 @@ export class HomeComponent implements OnInit {
 
     var preferenceRequest = {
           investmentAmount : parseInt(this.inputForm.controls.investmentAmount.value),
-          // investmentDuration : this.inputForm.controls.investmentDuration.value,
-          investmentDuration : '12',
+          investmentDuration : this.inputForm.controls.investmentDuration.value,
           investmentSector : this.inputForm.controls.investmentSector.value,
           volatility : this.inputForm.controls.volatility.value,
           portfolioName : this.inputForm.controls.portfolioName.value,
           userId : this.loggedInUser.userid,
-          // userId : 3,
     }
     console.log(preferenceRequest);
 

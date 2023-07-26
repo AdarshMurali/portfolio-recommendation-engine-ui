@@ -1,0 +1,9 @@
+{
+    "user": {
+        "userid": 9999,
+        "firstname": "James",
+        "lastname": "Smith",
+        "email": "james.smith@gmail.com",
+        "password": "password"
+    }
+}

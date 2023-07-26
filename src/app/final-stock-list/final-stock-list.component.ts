@@ -55,10 +55,10 @@ export class FinalStockListComponent implements OnInit {
     }
       this.dataService.post('/CustomerPreference/saveCustPreferedtocks', saveRequest).subscribe((data : any) => {
         alert('Executed successfully');
-        // this.router.navigateByUrl('/existingPortfolio');
+        this.router.navigateByUrl('/existingPortfolio');
       }, error => {
         alert('Executed successfully');
-        // this.router.navigateByUrl('/existingPortfolio');
+        this.router.navigateByUrl('/existingPortfolio');
       });
 
   }
